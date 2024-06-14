@@ -1,5 +1,5 @@
 import { Move } from "./types";
-import { Strategy } from "./strategy";
+import { Strategy } from "./Strategy";
 
 class TitForTat extends Strategy {
   private lastOpponentMove: Move | null = null;

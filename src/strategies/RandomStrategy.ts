@@ -1,5 +1,5 @@
 import { Move } from "./types";
-import { Strategy } from "./strategy";
+import { Strategy } from "./Strategy";
 
 class RandomStrategy extends Strategy {
   getNextMove(): Move {
