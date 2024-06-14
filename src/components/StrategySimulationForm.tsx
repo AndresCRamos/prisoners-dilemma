@@ -1,9 +1,15 @@
 import React, { useState, useMemo } from "react";
 import { StrategyName } from "../strategies";
 import StrategySelector from "./StrategySelector";
-import { simulatePlay } from "../utils/simulation";
+import { PlayResult, simulatePlay } from "../utils/simulation";
 
-const StrategySimulationForm: React.FC = () => {
+interface StrategySimulationFormProps {
+  onSimulationComplete: (result: PlayResult) => void;
+}
+
+const StrategySimulationForm: React.FC<StrategySimulationFormProps> = ({
+  onSimulationComplete,
+}) => {
   const [strategy1Name, setStrategy1Name] = useState<StrategyName | "">("");
   const [strategy2Name, setStrategy2Name] = useState<StrategyName | "">("");
 
@@ -23,9 +29,8 @@ const StrategySimulationForm: React.FC = () => {
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
     if (strategy1Name && strategy2Name) {
-      console.log("Selected Strategies:", { strategy1Name, strategy2Name });
       const results = simulatePlay(strategy1Name, strategy2Name);
-      console.log(results);
+      onSimulationComplete(results);
     }
   };
 
