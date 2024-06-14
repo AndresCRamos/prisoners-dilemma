@@ -1,10 +1,10 @@
-import StrategySimulationForm from "./components/StrategySimulationForm";
+import SimulationGame from "./components/SimulationGame";
 
 function App() {
   return (
     <>
       <p>Hello World</p>
-      <StrategySimulationForm />
+      <SimulationGame />
     </>
   );
 }
