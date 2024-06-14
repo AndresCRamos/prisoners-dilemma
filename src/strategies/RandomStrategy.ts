@@ -1,7 +1,7 @@
 import { Move } from "./types";
 import { Strategy } from "./strategy";
 
-class Random extends Strategy {
+class RandomStrategy extends Strategy {
   getNextMove(): Move {
     return Math.random() < 0.5;
   }
@@ -9,4 +9,4 @@ class Random extends Strategy {
   setOpponentMove(_: Move): void {}
 }
 
-export default Random;
+export default RandomStrategy;
