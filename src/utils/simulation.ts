@@ -2,7 +2,7 @@ import { Move } from "../strategies/types";
 import { Strategy } from "../strategies/Strategy";
 import { StrategyName, strategyClasses } from "../strategies";
 
-interface RoundResult {
+export interface RoundResult {
   round: number;
   strategy1Move: Move;
   strategy2Move: Move;
@@ -10,7 +10,7 @@ interface RoundResult {
   strategy2Points: number;
 }
 
-interface PlayResult {
+export interface PlayResult {
   rounds: RoundResult[];
   finalScore: {
     strategy1: number;
