@@ -4,7 +4,7 @@ import StrategySelector from "./StrategySelector";
 import { PlayResult, simulatePlay } from "../utils/simulation";
 
 interface StrategySimulationFormProps {
-  onSimulationComplete: (result: PlayResult) => void;
+  onSimulationComplete: (result: PlayResult | null) => void;
 }
 
 const StrategySimulationForm: React.FC<StrategySimulationFormProps> = ({
