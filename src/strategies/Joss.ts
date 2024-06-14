@@ -9,7 +9,7 @@ class Joss extends Strategy {
       return true;
     }
     if (this.lastOpponentMove) {
-      if (Math.random() > 0.1) {
+      if (Math.random() < 0.9) {
         return true;
       }
     }
