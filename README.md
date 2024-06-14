@@ -1,30 +1,25 @@
-# React + TypeScript + Vite
+# Prisoner's Dilemma
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple web page that lets you test different strategies against each other on a repeated Prisoners's Dilema game
 
-Currently, two official plugins are available:
+## Implemented strategies
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Always Cooperate: Always cooperates, no matter what
+- Always Defect: Always defects, no matter what
+- Davis: Cooperates the first 10 moves, then plays as Friedman
+- Friedman: Cooperates until the opponent defects once, then always defects
+- Joss: Similar to Tit 4 Tat, but it has a 90% chance of betrayal when the opponent cooperated on the last move
+- Random: Cooperates or defects randomly
+- Tit 4 Tat: Imitates the movement the other strategy did in the last move
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+# Not implemented strategies
+- Downing
+- Feld
+- Graaskamp
+- Grofman
+- Name withheld
+- Nyedegger
+- Shubik
+- Stein & rapoport
+- Tideman & Chieruzzi
+- Tullock
