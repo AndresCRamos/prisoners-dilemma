@@ -3,6 +3,7 @@ import TitForTat from "./TitForTat";
 import RandomStrategy from "./RandomStrategy";
 import AlwaysCooperate from "./AlwaysCooperate";
 import AlwaysDefect from "./AlwaysDefect";
+import Friedman from "./Friedman";
 
 export type StrategyClassMap = {
   [key: string]: new () => Strategy;
@@ -13,6 +14,7 @@ const strategyClassesConst = {
   Random: RandomStrategy,
   "Always Cooperate": AlwaysCooperate,
   "Always Defect": AlwaysDefect,
+  Friedman: Friedman,
 } as const;
 
 export type StrategyName = keyof typeof strategyClassesConst;
