@@ -19,11 +19,13 @@ const RoundsInput: React.FC<RoundsInputProps> = ({
       onErrorChange("");
     } else {
       const numberValue = parseInt(value, 10);
-      if (!isNaN(numberValue)) {
+      if (isNaN(numberValue)) {
+        onErrorChange("Please enter a valid number");
+      } else if (numberValue <= 0) {
+        onErrorChange("Number has to be positive");
+      } else {
         onRoundsChange(numberValue);
         onErrorChange("");
-      } else {
-        onErrorChange("Please enter a valid number");
       }
     }
   };
@@ -34,6 +36,7 @@ const RoundsInput: React.FC<RoundsInputProps> = ({
         Number of Rounds:
         <input
           defaultValue={20}
+          type="number"
           onChange={handleChange}
           placeholder="Enter number of rounds"
         />
