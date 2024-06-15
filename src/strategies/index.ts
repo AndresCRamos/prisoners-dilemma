@@ -6,6 +6,7 @@ import AlwaysDefect from "./AlwaysDefect";
 import Friedman from "./Friedman";
 import Davis from "./Davis";
 import Joss from "./Joss";
+import Grofman from "./Grofman";
 
 export type StrategyClassMap = {
   [key: string]: new () => Strategy;
@@ -14,9 +15,10 @@ export type StrategyClassMap = {
 const strategyClassesConst = {
   "Always Cooperate": AlwaysCooperate,
   "Always Defect": AlwaysDefect,
-  Davis: Davis,
-  Friedman: Friedman,
-  Joss: Joss,
+  Davis,
+  Friedman,
+  Grofman,
+  Joss,
   Random: RandomStrategy,
   "Tit for Tat": TitForTat,
 } as const;

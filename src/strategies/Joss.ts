@@ -1,5 +1,6 @@
 import { Move } from "./types";
 import { Strategy } from "./Strategy";
+import { random_move_with_prob } from "../utils/random";
 
 class Joss extends Strategy {
   private lastOpponentMove: Move | null = null;
@@ -9,7 +10,7 @@ class Joss extends Strategy {
       return true;
     }
     if (this.lastOpponentMove) {
-      if (Math.random() < 0.9) {
+      if (random_move_with_prob(0.9)) {
         return true;
       }
     }
