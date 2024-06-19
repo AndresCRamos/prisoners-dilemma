@@ -13,10 +13,10 @@ const SimulationResult = () => {
         <thead>
           <tr>
             <th>Round</th>
-            <th>Strategy 1 Move</th>
-            <th>Strategy 2 Move</th>
-            <th>Strategy 1 Points</th>
-            <th>Strategy 2 Points</th>
+            <th>{results.strategy1} Move</th>
+            <th>{results.strategy2} Move</th>
+            <th>{results.strategy1} Points</th>
+            <th>{results.strategy2} Points</th>
           </tr>
         </thead>
         <tbody>
@@ -32,8 +32,12 @@ const SimulationResult = () => {
         </tbody>
       </table>
       <h3>Final Score</h3>
-      <p>Strategy 1: {results.finalScore.strategy1}</p>
-      <p>Strategy 2: {results.finalScore.strategy2}</p>
+      <p>
+        {results.strategy1}: {results.finalScore.strategy1}
+      </p>
+      <p>
+        {results.strategy2}: {results.finalScore.strategy2}
+      </p>
     </div>
   );
 };
