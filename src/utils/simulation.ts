@@ -11,6 +11,8 @@ export interface RoundResult {
 }
 
 export interface PlayResult {
+  strategy1: StrategyName;
+  strategy2: StrategyName;
   rounds: RoundResult[];
   finalScore: {
     strategy1: number;
@@ -83,6 +85,8 @@ export const simulatePlay = (
   }
 
   return {
+    strategy1: strategy1Name,
+    strategy2: strategy2Name,
     rounds: roundResults,
     finalScore: {
       strategy1: strategy1TotalPoints,
