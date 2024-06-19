@@ -1,31 +1,22 @@
 import React from "react";
+import { useSimulation } from "../hooks/useSimulation";
 
-interface RoundsInputProps {
-  rounds: number;
-  onRoundsChange: (value: number) => void;
-  error: string;
-  onErrorChange: (value: string) => void;
-}
-
-const RoundsInput: React.FC<RoundsInputProps> = ({
-  onRoundsChange,
-  error,
-  onErrorChange,
-}) => {
+const RoundsInput = () => {
+  const { setRounds, error, setError } = useSimulation();
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const value = event.target.value;
     if (value === "") {
-      onRoundsChange(20); // Default to 20 if input is invalid or empty
-      onErrorChange("");
+      setRounds(20); // Default to 20 if input is invalid or empty
+      setError("");
     } else {
       const numberValue = parseInt(value, 10);
       if (isNaN(numberValue)) {
-        onErrorChange("Please enter a valid number");
+        setError("Please enter a valid number");
       } else if (numberValue <= 0) {
-        onErrorChange("Number has to be positive");
+        setError("Number has to be positive");
       } else {
-        onRoundsChange(numberValue);
-        onErrorChange("");
+        setRounds(numberValue);
+        setError("");
       }
     }
   };
