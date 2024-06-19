@@ -1,12 +1,8 @@
-import React from "react";
-import { PlayResult } from "../utils/simulation";
+import { useSimulation } from "../hooks/useSimulation";
 
-interface SimulationResultProps {
-  result: PlayResult | null;
-}
-
-const SimulationResult: React.FC<SimulationResultProps> = ({ result }) => {
-  if (result === null) {
+const SimulationResult = () => {
+  const { results } = useSimulation();
+  if (results === null) {
     return <p>No results to display</p>;
   }
 
@@ -24,7 +20,7 @@ const SimulationResult: React.FC<SimulationResultProps> = ({ result }) => {
           </tr>
         </thead>
         <tbody>
-          {result.rounds.map((round) => (
+          {results.rounds.map((round) => (
             <tr key={round.round}>
               <td>{round.round}</td>
               <td>{round.strategy1Move ? "Cooperate" : "Defect"}</td>
@@ -36,8 +32,8 @@ const SimulationResult: React.FC<SimulationResultProps> = ({ result }) => {
         </tbody>
       </table>
       <h3>Final Score</h3>
-      <p>Strategy 1: {result.finalScore.strategy1}</p>
-      <p>Strategy 2: {result.finalScore.strategy2}</p>
+      <p>Strategy 1: {results.finalScore.strategy1}</p>
+      <p>Strategy 2: {results.finalScore.strategy2}</p>
     </div>
   );
 };
