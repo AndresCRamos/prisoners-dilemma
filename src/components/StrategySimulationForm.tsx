@@ -1,20 +1,19 @@
-import React, { useState, useMemo } from "react";
+import React, { useMemo } from "react";
 import { StrategyName } from "../strategies";
 import StrategySelector from "./StrategySelector";
-import { PlayResult, simulatePlay } from "../utils/simulation";
+import { simulatePlay } from "../utils/simulation";
 import RoundsInput from "./RoundsInput";
+import { useSimulation } from "../hooks/useSimulation";
 
-interface StrategySimulationFormProps {
-  onSimulationComplete: (result: PlayResult | null) => void;
-}
-
-const StrategySimulationForm: React.FC<StrategySimulationFormProps> = ({
-  onSimulationComplete,
-}) => {
-  const [strategy1Name, setStrategy1Name] = useState<StrategyName | "">("");
-  const [strategy2Name, setStrategy2Name] = useState<StrategyName | "">("");
-  const [error, setError] = useState<string>("");
-  const [rounds, setRounds] = useState<number>(20);
+const StrategySimulationForm = () => {
+  const {
+    strategy1Name,
+    setStrategy1Name,
+    strategy2Name,
+    setStrategy2Name,
+    setResults,
+    rounds,
+  } = useSimulation();
 
   const handleStrategy1 = (strategyName: StrategyName) => {
     setStrategy1Name(strategyName);
@@ -28,7 +27,7 @@ const StrategySimulationForm: React.FC<StrategySimulationFormProps> = ({
     event.preventDefault();
     if (strategy1Name && strategy2Name) {
       const results = simulatePlay(strategy1Name, strategy2Name, rounds);
-      onSimulationComplete(results);
+      setResults(results);
     }
   };
 
@@ -49,12 +48,7 @@ const StrategySimulationForm: React.FC<StrategySimulationFormProps> = ({
         onStrategyChange={handleStrategy2}
         selectedStrategy={strategy2Name}
       />
-      <RoundsInput
-        rounds={rounds}
-        onRoundsChange={setRounds}
-        error={error}
-        onErrorChange={setError}
-      />
+      <RoundsInput />
       <button type="submit" disabled={!bothStrategiesSelected}>
         Simulate
       </button>
