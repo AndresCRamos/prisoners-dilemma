@@ -18,3 +18,10 @@ export abstract class StrategyWithRounds extends BaseStrategy {
 }
 
 export type Strategy = BaseStrategy | StrategyWithRounds;
+
+export type BaseStrategyConstructor = new () => Strategy;
+export type StrategyWithRoundsConstructor = new (rounds: number) => Strategy;
+
+export type StrategyConstructor =
+  | BaseStrategyConstructor
+  | StrategyWithRoundsConstructor;
