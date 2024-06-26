@@ -1,6 +1,6 @@
 import { Move } from "../strategies/types";
 import { Strategy } from "../strategies/Strategy";
-import { StrategyName, strategyClasses } from "../strategies";
+import { StrategyName, createStrategy } from "../strategies";
 
 export interface RoundResult {
   round: number;
@@ -38,11 +38,8 @@ export const simulatePlay = (
   strategy2Name: StrategyName,
   rounds: number = 20
 ): PlayResult => {
-  const Strategy1 = strategyClasses[strategy1Name];
-  const Strategy2 = strategyClasses[strategy2Name];
-
-  const strategy1 = new Strategy1();
-  const strategy2 = new Strategy2();
+  const strategy1 = createStrategy(strategy1Name, rounds);
+  const strategy2 = createStrategy(strategy2Name, rounds);
 
   let strategy1TotalPoints = 0;
   let strategy2TotalPoints = 0;
