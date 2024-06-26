@@ -1,7 +1,7 @@
 import { Move } from "./types";
-import { Strategy } from "./Strategy";
+import { BaseStrategy } from "./Strategy";
 
-class Friedman extends Strategy {
+class Friedman extends BaseStrategy {
   private hasOpponentDefected: boolean = false;
   getNextMove(): Move {
     return !this.hasOpponentDefected;

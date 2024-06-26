@@ -1,7 +1,7 @@
 import { Move } from "./types";
-import { Strategy } from "./Strategy";
+import { BaseStrategy } from "./Strategy";
 
-class Davis extends Strategy {
+class Davis extends BaseStrategy {
   private hasOpponentDefected: boolean = false;
   private roundsPlayed: number = 0;
 

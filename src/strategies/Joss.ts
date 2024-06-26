@@ -1,8 +1,8 @@
 import { Move } from "./types";
-import { Strategy } from "./Strategy";
+import { BaseStrategy } from "./Strategy";
 import { random_move_with_prob } from "../utils/random";
 
-class Joss extends Strategy {
+class Joss extends BaseStrategy {
   private lastOpponentMove: Move | null = null;
 
   getNextMove(): Move {

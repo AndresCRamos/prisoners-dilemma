@@ -1,7 +1,7 @@
 import { Move } from "./types";
-import { Strategy } from "./Strategy";
+import { BaseStrategy } from "./Strategy";
 
-class AlwaysCooperate extends Strategy {
+class AlwaysCooperate extends BaseStrategy {
   getNextMove(): Move {
     return true;
   }

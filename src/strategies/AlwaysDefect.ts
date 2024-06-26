@@ -1,7 +1,7 @@
 import { Move } from "./types";
-import { Strategy } from "./Strategy";
+import { BaseStrategy } from "./Strategy";
 
-class AlwaysDefect extends Strategy {
+class AlwaysDefect extends BaseStrategy {
   getNextMove(): Move {
     return false;
   }

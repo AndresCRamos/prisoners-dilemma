@@ -1,8 +1,8 @@
 import { Move } from "./types";
-import { Strategy } from "./Strategy";
+import { BaseStrategy } from "./Strategy";
 import { random_move_with_prob } from "../utils/random";
 
-class RandomStrategy extends Strategy {
+class RandomStrategy extends BaseStrategy {
   getNextMove(): Move {
     return random_move_with_prob();
   }
