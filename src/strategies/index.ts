@@ -12,6 +12,7 @@ import Friedman from "./Friedman";
 import Davis from "./Davis";
 import Joss from "./Joss";
 import Grofman from "./Grofman";
+import Feld from "./Feld";
 
 export type StrategyClassMap = {
   [key: string]: StrategyConstructor;
@@ -21,6 +22,7 @@ const strategyClassesConst = {
   "Always Cooperate": AlwaysCooperate,
   "Always Defect": AlwaysDefect,
   Davis,
+  Feld,
   Friedman,
   Grofman,
   Joss,
