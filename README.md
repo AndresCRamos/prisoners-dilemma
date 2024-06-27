@@ -11,13 +11,13 @@ A simple web page that lets you test different strategies against each other on 
 - Friedman: Cooperates until the opponent defects once, then always defects
 - Grofman: Cooperates if the strategy and the opponent made the same move in the last turn, and if not, has a 28% of cooperating
 - Joss: Similar to Tit 4 Tat, but it has a 90% chance of betrayal when the opponent cooperated on the last move
+- Name withheld: Generates a random probability between 30% and 100% following a normal distribution, and makes a random choice with the generated probability
 - Random: Cooperates or defects randomly
 - Tit 4 Tat: Imitates the movement the other strategy did in the last move
 
 # Not implemented strategies
 - Downing
 - Graaskamp
-- Name withheld
 - Nyedegger
 - Shubik
 - Stein & rapoport

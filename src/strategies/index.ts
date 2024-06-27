@@ -13,6 +13,7 @@ import Davis from "./Davis";
 import Joss from "./Joss";
 import Grofman from "./Grofman";
 import Feld from "./Feld";
+import Anonymous from "./Anonymous";
 
 export type StrategyClassMap = {
   [key: string]: StrategyConstructor;
@@ -26,6 +27,7 @@ const strategyClassesConst = {
   Friedman,
   Grofman,
   Joss,
+  "Name Witheld": Anonymous,
   Random: RandomStrategy,
   "Tit for Tat": TitForTat,
 } as const;
