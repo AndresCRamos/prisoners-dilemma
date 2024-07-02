@@ -1,8 +1,8 @@
 import { random_move_with_prob, random_uniform } from "../utils/random";
-import { BaseStrategy } from "./Strategy";
+import { StrategyBase } from "./Strategy";
 import { Move } from "./types";
 
-class Anonymous extends BaseStrategy {
+class Anonymous extends StrategyBase {
   getNextMove(): Move {
     const p = random_uniform(3, 10) / 10;
     return random_move_with_prob(p);

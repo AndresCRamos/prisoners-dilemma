@@ -1,5 +1,5 @@
 import {
-  BaseStrategyConstructor,
+  StrategyBaseConstructor,
   Strategy,
   StrategyConstructor,
   StrategyWithRounds,
@@ -54,7 +54,7 @@ export const createStrategy = (
       StrategyClass as StrategyWithRoundsConstructor;
     return new strategyWithRoundsConstructor(rounds);
   } else {
-    const baseStrategyConstructor = StrategyClass as BaseStrategyConstructor;
+    const baseStrategyConstructor = StrategyClass as StrategyBaseConstructor;
     return new baseStrategyConstructor();
   }
 };

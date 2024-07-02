@@ -1,8 +1,8 @@
 import { random_move_with_prob } from "../utils/random";
-import { BaseStrategy } from "./Strategy";
+import { StrategyBase } from "./Strategy";
 import { Move } from "./types";
 
-class Grofman extends BaseStrategy {
+class Grofman extends StrategyBase {
   private lastMove: Move | null = null;
   private lastOpponentMove: Move | null = null;
 

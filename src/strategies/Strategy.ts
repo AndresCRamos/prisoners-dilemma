@@ -1,12 +1,12 @@
 import chi2gof from "@stdlib/stats-chi2gof";
 import { Move, StrategyInterface } from "./types";
 
-export abstract class BaseStrategy implements StrategyInterface {
+export abstract class StrategyBase implements StrategyInterface {
   abstract getNextMove(): Move;
   abstract setOpponentMove(move: Move): void;
 }
 
-export abstract class StrategyWithRounds extends BaseStrategy {
+export abstract class StrategyWithRounds extends StrategyBase {
   protected rounds: number;
 
   constructor(rounds: number) {
@@ -18,7 +18,7 @@ export abstract class StrategyWithRounds extends BaseStrategy {
   abstract setOpponentMove(move: Move): void;
 }
 
-export class StrategyChi2Test extends BaseStrategy {
+export class StrategyChi2Test extends StrategyBase {
   protected opponentCooperations: number = 0;
   protected opponentDefections: number = 0;
   protected alpha: number = 0.05;
@@ -52,11 +52,11 @@ export class StrategyChi2Test extends BaseStrategy {
   }
 }
 
-export type Strategy = BaseStrategy | StrategyWithRounds | StrategyChi2Test;
+export type Strategy = StrategyBase | StrategyWithRounds | StrategyChi2Test;
 
-export type BaseStrategyConstructor = new () => Strategy;
+export type StrategyBaseConstructor = new () => Strategy;
 export type StrategyWithRoundsConstructor = new (rounds: number) => Strategy;
 
 export type StrategyConstructor =
-  | BaseStrategyConstructor
+  | StrategyBaseConstructor
   | StrategyWithRoundsConstructor;
