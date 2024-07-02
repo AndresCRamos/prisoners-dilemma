@@ -3,6 +3,7 @@ import {
   Strategy,
   StrategyConstructor,
   StrategyWithRounds,
+  StrategyWithRoundsConstructor,
 } from "./Strategy";
 import TitForTat from "./TitForTat";
 import RandomStrategy from "./RandomStrategy";
@@ -14,6 +15,7 @@ import Joss from "./Joss";
 import Grofman from "./Grofman";
 import Feld from "./Feld";
 import Anonymous from "./Anonymous";
+import SteinAndRapaport from "./SteinAndRapaport";
 
 export type StrategyClassMap = {
   [key: string]: StrategyConstructor;
@@ -29,6 +31,7 @@ const strategyClassesConst = {
   Joss,
   "Name Witheld": Anonymous,
   Random: RandomStrategy,
+  "Stein and Rapaport": SteinAndRapaport,
   "Tit for Tat": TitForTat,
 } as const;
 
@@ -47,7 +50,9 @@ export const createStrategy = (
   const StrategyClass = strategyClasses[strategyName];
 
   if (StrategyClass.prototype instanceof StrategyWithRounds) {
-    return new StrategyClass(rounds);
+    const strategyWithRoundsConstructor =
+      StrategyClass as StrategyWithRoundsConstructor;
+    return new strategyWithRoundsConstructor(rounds);
   } else {
     const baseStrategyConstructor = StrategyClass as BaseStrategyConstructor;
     return new baseStrategyConstructor();
