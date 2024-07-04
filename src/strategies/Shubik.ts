@@ -10,7 +10,15 @@ class Shubik extends StrategyBase {
 
   getNextMove(): Move {}
 
-  setOpponentMove(move: Move): void {}
+  setOpponentMove(move: Move): void {
+    if (this.isRetaliating || (!this.lastOpponentMove && this.lastOwnMove)) {
+      this.retaliationRemaining--;
+      if (this.retaliationRemaining == 0) {
+        this.isRetaliating = false;
+      }
+    }
+    this.lastOpponentMove = move;
+  }
 }
 
 export default Shubik;
