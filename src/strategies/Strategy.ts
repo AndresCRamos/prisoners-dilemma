@@ -52,7 +52,20 @@ export class StrategyChi2Test extends StrategyBase {
   }
 }
 
-export type Strategy = StrategyBase | StrategyWithRounds | StrategyChi2Test;
+export class StrategyChi2TestWithRounds extends StrategyChi2Test {
+  protected rounds: number;
+
+  constructor(rounds: number) {
+    super();
+    this.rounds = rounds;
+  }
+}
+
+export type Strategy =
+  | StrategyBase
+  | StrategyWithRounds
+  | StrategyChi2Test
+  | StrategyChi2TestWithRounds;
 
 export type StrategyBaseConstructor = new () => Strategy;
 export type StrategyWithRoundsConstructor = new (rounds: number) => Strategy;
