@@ -1,7 +1,7 @@
-import { StrategyChi2Test } from "./Strategy";
+import { StrategyChi2TestWithRounds } from "./Strategy";
 import { Move } from "./types";
 
-class Graaskamp extends StrategyChi2Test {
+class Graaskamp extends StrategyChi2TestWithRounds {
   getNextMove(): Move {}
 
   setOpponentMove(move: Move): void {}
