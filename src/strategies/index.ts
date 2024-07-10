@@ -16,6 +16,7 @@ import Grofman from "./Grofman";
 import Feld from "./Feld";
 import Anonymous from "./Anonymous";
 import SteinAndRapaport from "./SteinAndRapaport";
+import Graaskamp from "./Graaskamp";
 
 export type StrategyClassMap = {
   [key: string]: StrategyConstructor;
@@ -27,6 +28,7 @@ const strategyClassesConst = {
   Davis,
   Feld,
   Friedman,
+  Graaskamp,
   Grofman,
   Joss,
   "Name Witheld": Anonymous,
