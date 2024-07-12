@@ -8,5 +8,8 @@ class Tullock extends StrategyBase {
 
   getNextMove(): Move {}
 
-  setOpponentMove(move: Move): void {}
+  setOpponentMove(move: Move): void {
+    this.opponentMoveHistory.push(move);
+    this.currentRound++;
+  }
 }
