@@ -18,8 +18,8 @@ class Graaskamp extends StrategyChi2TestWithRounds {
       return this.setLastOwnMove(true);
     }
 
-    if (this.currentRound < 10) {
-      if (!this.opponentMoveHistory.at(-1) || this.currentRound === 8) {
+    if (this.currentRound < 56) {
+      if (!this.opponentMoveHistory.at(-1) || this.currentRound === 50) {
         return this.setLastOwnMove(false);
       }
       return this.setLastOwnMove(true);
