@@ -18,6 +18,7 @@ import Anonymous from "./Anonymous";
 import SteinAndRapaport from "./SteinAndRapaport";
 import Graaskamp from "./Graaskamp";
 import Shubik from "./Shubik";
+import Tullock from "./Tullock";
 
 export type StrategyClassMap = {
   [key: string]: StrategyConstructor;
@@ -37,6 +38,7 @@ const strategyClassesConst = {
   Shubik,
   "Stein and Rapaport": SteinAndRapaport,
   "Tit for Tat": TitForTat,
+  Tullock,
 } as const;
 
 export type StrategyName = keyof typeof strategyClassesConst;
