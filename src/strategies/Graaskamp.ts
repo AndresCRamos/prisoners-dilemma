@@ -30,15 +30,17 @@ class Graaskamp extends StrategyChi2TestWithRounds {
     if (this.isOpponentRandom) {
       return this.setLastOwnMove(false);
     }
-
-    const playsTitForTat = this.ownMoveHistory
+    const isOpponentTitForTat = this.opponentMoveHistory
       .slice(1)
-      .every((move, index) => move === this.opponentMoveHistory[index]);
+      .every(
+        (opponentMove, index) => opponentMove === this.ownMoveHistory[index]
+      );
+
     const isClone = this.ownMoveHistory.every(
       (move, index) => move === this.opponentMoveHistory[index]
     );
 
-    if (playsTitForTat || isClone) {
+    if (isOpponentTitForTat || isClone) {
       if (!this.opponentMoveHistory.at(-1)) {
         return this.setLastOwnMove(false);
       }
