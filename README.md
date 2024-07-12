@@ -16,10 +16,10 @@ A simple web page that lets you test different strategies against each other on 
 - Stein & rapoport: Cooperates the first 5 moves, play Tit 4 Tat the next 10 moves, after this, it will check if the other player is playing randomly, if true, always defects, if not, it plays Tit 4 Tat. Will repeat the randomness check every 15 moves
 - Random: Cooperates or defects randomly
 - Tit 4 Tat: Imitates the movement the other strategy did in the last move
+- Tullock: Cooperates the first 11 moves, then randonmy cooperates, with a probability 10% less than his opponent on the alst 10 moves
 
 # Not implemented strategies
 - Downing
 - Nyedegger
 - Shubik
 - Tideman & Chieruzzi
-- Tullock
