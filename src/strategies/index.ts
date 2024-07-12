@@ -16,6 +16,7 @@ import Grofman from "./Grofman";
 import Feld from "./Feld";
 import Anonymous from "./Anonymous";
 import SteinAndRapaport from "./SteinAndRapaport";
+import Graaskamp from "./Graaskamp";
 import Shubik from "./Shubik";
 
 export type StrategyClassMap = {
@@ -28,6 +29,7 @@ const strategyClassesConst = {
   Davis,
   Feld,
   Friedman,
+  Graaskamp,
   Grofman,
   Joss,
   "Name Witheld": Anonymous,
