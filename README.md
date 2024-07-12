@@ -9,6 +9,7 @@ A simple web page that lets you test different strategies against each other on 
 - Davis: Cooperates the first 10 moves, then plays as Friedman
 - Feld: Similar to Tit 4 Tat, but the cooperation probability decreases linearly, until the last round, with a cooperation probability of 50%
 - Friedman: Cooperates until the opponent defects once, then always defects
+- Graaskamp: Plays Tit 4 Tat the first 50 moves, defects on 51 and plays Tit 4 Tat until round 56, afterwards it checks if the opponent is random, if so, it always defects, it checks if the opponent is Tit 4 Tat or a clone, if so, it plays Tit 4 Tat, if not, always cooperates, with a random defection every 5 to 15 moves
 - Grofman: Cooperates if the strategy and the opponent made the same move in the last turn, and if not, has a 28% of cooperating
 - Joss: Similar to Tit 4 Tat, but it has a 90% chance of betrayal when the opponent cooperated on the last move
 - Name withheld: Generates a random probability between 30% and 100% following a normal distribution, and makes a random choice with the generated probability
@@ -18,7 +19,6 @@ A simple web page that lets you test different strategies against each other on 
 
 # Not implemented strategies
 - Downing
-- Graaskamp
 - Nyedegger
 - Shubik
 - Tideman & Chieruzzi
