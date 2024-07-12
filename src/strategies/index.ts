@@ -17,6 +17,7 @@ import Feld from "./Feld";
 import Anonymous from "./Anonymous";
 import SteinAndRapaport from "./SteinAndRapaport";
 import Graaskamp from "./Graaskamp";
+import Shubik from "./Shubik";
 
 export type StrategyClassMap = {
   [key: string]: StrategyConstructor;
@@ -33,6 +34,7 @@ const strategyClassesConst = {
   Joss,
   "Name Witheld": Anonymous,
   Random: RandomStrategy,
+  Shubik,
   "Stein and Rapaport": SteinAndRapaport,
   "Tit for Tat": TitForTat,
 } as const;
