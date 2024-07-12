@@ -11,11 +11,11 @@ class Tullock extends StrategyBase {
     if (this.currentRound < this.roundsToCooperate) {
       return true;
     }
-    const rounds = this.roundsToCooperate--;
+    const recentMoves = this.roundsToCooperate - 1;
     const cooperateCount = this.opponentMoveHistory
-      .slice(-rounds)
+      .slice(-recentMoves)
       .filter((move) => move).length;
-    const prob_cooperate = Math.max(0, cooperateCount / rounds - 0.1);
+    const prob_cooperate = Math.max(0, cooperateCount / recentMoves - 0.1);
     return random_move_with_prob(prob_cooperate);
   }
 
@@ -24,3 +24,5 @@ class Tullock extends StrategyBase {
     this.currentRound++;
   }
 }
+
+export default Tullock;
