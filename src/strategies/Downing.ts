@@ -7,12 +7,21 @@ class Downing extends StrategyWithHistory {
   private ownCooperations: number = 0;
   private ownDefections: number = 0;
 
-  private mutualDefectionPoints = 1;
-  private mutualCooperationPoints = 3;
-  private cooperationOnDefectionPoints = 0;
-  private defectionOnCooperationPoints = 5;
+  private MUTUAL_DEFECTION_POINTS = 1;
+  private MUTUAL_COOPERATION_POINTS = 3;
+  private COOPERATION_ON_DEFECTION_POINTS = 0;
+  private DEFECTION_ON_COOPERATION_POINTS = 5;
 
   getNextMove(): Move {}
+
+  protected setLastOwnMove(move: Move): Move {
+    this.ownMoveHistory.push(move);
+    if (move) {
+      this.ownCooperations++;
+    }
+    this.ownDefections++;
+    return move;
+  }
 
   setOpponentMove(move: Move): void {
     this.setLastOpponentMove(move);
