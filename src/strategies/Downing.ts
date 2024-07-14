@@ -68,3 +68,5 @@ class Downing extends StrategyWithHistory {
     this.currentRound++;
   }
 }
+
+export default Downing;

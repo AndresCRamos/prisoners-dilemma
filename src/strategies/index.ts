@@ -19,6 +19,7 @@ import SteinAndRapaport from "./SteinAndRapaport";
 import Graaskamp from "./Graaskamp";
 import Shubik from "./Shubik";
 import Tullock from "./Tullock";
+import Downing from "./Downing";
 
 export type StrategyClassMap = {
   [key: string]: StrategyConstructor;
@@ -28,6 +29,7 @@ const strategyClassesConst = {
   "Always Cooperate": AlwaysCooperate,
   "Always Defect": AlwaysDefect,
   Davis,
+  Downing,
   Feld,
   Friedman,
   Graaskamp,
