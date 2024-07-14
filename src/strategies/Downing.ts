@@ -7,10 +7,10 @@ class Downing extends StrategyWithHistory {
   private ownCooperations: number = 0;
   private ownDefections: number = 0;
 
-  private MUTUAL_DEFECTION_POINTS = 1;
-  private MUTUAL_COOPERATION_POINTS = 3;
-  private COOPERATION_ON_DEFECTION_POINTS = 0;
-  private DEFECTION_ON_COOPERATION_POINTS = 5;
+  private R_MUTUAL_COOPERATION_POINTS = 3;
+  private P_MUTUAL_DEFECTION_POINTS = 1;
+  private S_COOPERATION_ON_DEFECTION_POINTS = 0;
+  private T_DEFECTION_ON_COOPERATION_POINTS = 5;
 
   getNextMove(): Move {}
 
