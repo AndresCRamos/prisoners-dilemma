@@ -36,7 +36,8 @@ class Downing extends StrategyWithHistory {
       this.opponentCooperationsInResponseToCooperation /
       (this.ownCooperations + 1);
     const beta =
-      this.opponentCooperationsInResponseToDefection / this.ownDefections;
+      this.opponentCooperationsInResponseToDefection /
+      Math.max(this.ownDefections, 2);
 
     const expected_value_of_cooperating =
       alpha * this.R_MUTUAL_COOPERATION_POINTS +
@@ -48,7 +49,7 @@ class Downing extends StrategyWithHistory {
     if (expected_value_of_cooperating > expected_value_of_defecting) {
       return this.setLastOwnMove(true);
     }
-    if (expected_value_of_defecting < expected_value_of_cooperating) {
+    if (expected_value_of_defecting > expected_value_of_cooperating) {
       return this.setLastOwnMove(false);
     }
     return this.setLastOwnMove(!this.ownMoveHistory.at(-1));
@@ -58,8 +59,9 @@ class Downing extends StrategyWithHistory {
     this.ownMoveHistory.push(move);
     if (move) {
       this.ownCooperations++;
+    } else {
+      this.ownDefections++;
     }
-    this.ownDefections++;
     return move;
   }
 
