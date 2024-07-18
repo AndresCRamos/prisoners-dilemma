@@ -7,6 +7,7 @@ A simple web page that lets you test different strategies against each other on 
 - Always Cooperate: Always cooperates, no matter what
 - Always Defect: Always defects, no matter what
 - Davis: Cooperates the first 10 moves, then plays as Friedman
+- Downing: Calculates the probability of the opponent to cooperate or defect, and makes a choice with the intent to maximize his own points in the long term
 - Feld: Similar to Tit 4 Tat, but the cooperation probability decreases linearly, until the last round, with a cooperation probability of 50%
 - Friedman: Cooperates until the opponent defects once, then always defects
 - Graaskamp: Plays Tit 4 Tat the first 50 moves, defects on 51 and plays Tit 4 Tat until round 56, afterwards it checks if the opponent is random, if so, it always defects, it checks if the opponent is Tit 4 Tat or a clone, if so, it plays Tit 4 Tat, if not, always cooperates, with a random defection every 5 to 15 moves
@@ -20,6 +21,5 @@ A simple web page that lets you test different strategies against each other on 
 - Tullock: Cooperates the first 11 moves, then randonmy cooperates, with a probability 10% less than his opponent on the alst 10 moves
 
 # Not implemented strategies
-- Downing
 - Nyedegger
 - Tideman & Chieruzzi
