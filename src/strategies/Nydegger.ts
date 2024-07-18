@@ -13,6 +13,10 @@ class Nydegger extends StrategyWithHistory {
     [[false, false], 3],
   ]);
 
+  private getScorePerMove(ownMove: Move, opponentMove: Move): number {
+    return this.scoreMap.get([ownMove, opponentMove])!;
+  }
+
   getNextMove(): Move {}
 
   setOpponentMove(move: Move): void {
