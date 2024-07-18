@@ -4,7 +4,10 @@ import { Move } from "./types";
 class Nydegger extends StrategyWithHistory {
   getNextMove(): Move {}
 
-  setOpponentMove(move: Move): void {}
+  setOpponentMove(move: Move): void {
+    this.setLastOpponentMove(move);
+    this.currentRound++;
+  }
 }
 
 export default Nydegger;
