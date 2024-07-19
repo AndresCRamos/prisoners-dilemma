@@ -20,6 +20,7 @@ import Graaskamp from "./Graaskamp";
 import Shubik from "./Shubik";
 import Tullock from "./Tullock";
 import Downing from "./Downing";
+import Nydegger from "./Nydegger";
 
 export type StrategyClassMap = {
   [key: string]: StrategyConstructor;
@@ -36,6 +37,7 @@ const strategyClassesConst = {
   Grofman,
   Joss,
   "Name Witheld": Anonymous,
+  Nydegger,
   Random: RandomStrategy,
   Shubik,
   "Stein and Rapaport": SteinAndRapaport,
