@@ -40,14 +40,14 @@ class Nydegger extends StrategyWithHistory {
     }
 
     if (this.currentRound == 1) {
-      const lastOpponentMove = !this.opponentMoveHistory.at(-1);
+      const lastOpponentMove = this.opponentMoveHistory.at(-1)!;
       return this.setLastOwnMove(lastOpponentMove);
     }
     if (this.currentRound == 2) {
       if (!this.opponentMoveHistory.at(-2) && this.opponentMoveHistory.at(-1)) {
         return this.setLastOwnMove(false);
       }
-      const lastOpponentMove = !this.opponentMoveHistory.at(-1);
+      const lastOpponentMove = this.opponentMoveHistory.at(-1)!;
       return this.setLastOwnMove(lastOpponentMove);
     }
 
