@@ -34,7 +34,29 @@ class Nydegger extends StrategyWithHistory {
     return lastScore + secondLastScore + thirdLastScore;
   }
 
-  getNextMove(): Move {}
+  getNextMove(): Move {
+    if (this.currentRound == 0) {
+      return this.setLastOwnMove(true);
+    }
+
+    if (this.currentRound == 1) {
+      const lastOpponentMove = !this.opponentMoveHistory.at(-1);
+      return this.setLastOwnMove(lastOpponentMove);
+    }
+    if (this.currentRound == 2) {
+      if (!this.opponentMoveHistory.at(-2) && this.opponentMoveHistory.at(-1)) {
+        return this.setLastOwnMove(false);
+      }
+      const lastOpponentMove = !this.opponentMoveHistory.at(-1);
+      return this.setLastOwnMove(lastOpponentMove);
+    }
+
+    const score = this.getScore();
+    if (this.pointsToDefect.includes(score)) {
+      return this.setLastOwnMove(false);
+    }
+    return this.setLastOwnMove(true);
+  }
 
   setOpponentMove(move: Move): void {
     this.setLastOpponentMove(move);
