@@ -38,7 +38,7 @@ class TidemanAndChieruzzi extends StrategyBase {
     this.rememberedNumberOfOpponentDefectioons = 0;
   }
 
-  private addScoresFromLastRound(): [number, number] {
+  private addScoresFromLastRound() {
     const [lastOwnScore, lastOpponentScore] = this.scorePerRoundMap.get(
       [this.lastOwnMove!, this.lastOpponentMove!]!
     )!;
