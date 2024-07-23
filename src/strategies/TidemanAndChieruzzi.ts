@@ -53,7 +53,10 @@ class TidemanAndChieruzzi extends StrategyBase {
 
   getNextMove(): Move {}
 
-  setOpponentMove(move: Move): void {}
+  setOpponentMove(move: Move): void {
+    this.lastOpponentMove = move;
+    this.addScoresFromLastRound();
+  }
 }
 
 export default TidemanAndChieruzzi;
