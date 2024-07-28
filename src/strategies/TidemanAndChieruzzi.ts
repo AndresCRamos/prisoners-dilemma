@@ -12,6 +12,7 @@ class TidemanAndChieruzzi extends StrategyWithRounds {
   private lastFreshStart: number = 0;
   private isFreshStart: boolean = false;
   private rememberedNumberOfOpponentDefectioons: number = 0;
+  private currentRound = 1;
   private scorePerRoundMap = new Map<[boolean, boolean], [number, number]>([
     [
       [true, true],
@@ -60,6 +61,7 @@ class TidemanAndChieruzzi extends StrategyWithRounds {
   setOpponentMove(move: Move): void {
     this.lastOpponentMove = move;
     this.addScoresFromLastRound();
+    this.currentRound++;
   }
 }
 
