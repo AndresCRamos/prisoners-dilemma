@@ -61,7 +61,7 @@ class TidemanAndChieruzzi extends StrategyWithRounds {
   getNextMove(): Move {}
 
   setOpponentMove(move: Move): void {
-    if(move){
+    if (move) {
       this.opponentCooperations++;
     } else {
       this.opponentDefections++;
