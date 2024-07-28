@@ -53,6 +53,16 @@ class TidemanAndChieruzzi extends StrategyWithRounds {
     this.opponentScore += lastOpponentScore;
   }
 
+  private decreaseRetaliationCounter() {
+    if (this.isRetaliating) {
+      this.retaliationRemaining--;
+    }
+
+    if (this.retaliationRemaining == 0) {
+      this.isRetaliating = false;
+    }
+  }
+
   private setLastOwnMove(move: Move): Move {
     this.lastOwnMove = move;
     return move;
