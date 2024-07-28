@@ -4,6 +4,8 @@ import { Move } from "./types";
 class TidemanAndChieruzzi extends StrategyWithRounds {
   private lastOpponentMove: Move | null = null;
   private opponentScore: number = 0;
+  private opponentCooperations: number = 0;
+  private opponentDefections: number = 0;
   private lastOwnMove: Move | null = null;
   private ownScore: number = 0;
   private isRetaliating: boolean = false;
@@ -59,6 +61,11 @@ class TidemanAndChieruzzi extends StrategyWithRounds {
   getNextMove(): Move {}
 
   setOpponentMove(move: Move): void {
+    if(move){
+      this.opponentCooperations++;
+    } else {
+      this.opponentDefections++;
+    }
     this.lastOpponentMove = move;
     this.addScoresFromLastRound();
     this.currentRound++;
