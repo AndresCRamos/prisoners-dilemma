@@ -1,7 +1,7 @@
-import { StrategyBase } from "./Strategy";
+import { StrategyWithRounds } from "./Strategy";
 import { Move } from "./types";
 
-class TidemanAndChieruzzi extends StrategyBase {
+class TidemanAndChieruzzi extends StrategyWithRounds {
   private lastOpponentMove: Move | null = null;
   private opponentScore: number = 0;
   private lastOwnMove: Move | null = null;
@@ -30,6 +30,10 @@ class TidemanAndChieruzzi extends StrategyBase {
       [1, 1],
     ],
   ]);
+
+  constructor(rounds: number) {
+    super(rounds);
+  }
 
   private freshStart() {
     this.isRetaliating = false;
