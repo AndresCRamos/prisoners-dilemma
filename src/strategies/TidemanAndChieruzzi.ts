@@ -64,7 +64,63 @@ class TidemanAndChieruzzi extends StrategyWithRounds {
     return move;
   }
 
-  getNextMove(): Move {}
+  getNextMove(): Move {
+    if (this.lastOpponentMove === null) {
+      return this.setLastOwnMove(true);
+    }
+
+    if (!this.lastOpponentMove) {
+      this.rememberedNumberOfOpponentDefectioons++;
+    }
+
+    if (this.isFreshStart) {
+      this.isFreshStart = false;
+      return this.setLastOwnMove(true);
+    }
+
+    let validFreshStart;
+    if (this.lastFreshStart == 0) {
+      validFreshStart = true;
+    } else {
+      validFreshStart = this.currentRound - this.lastFreshStart >= 20;
+    }
+
+    if (validFreshStart) {
+      const validPoints = this.ownScore - this.opponentScore >= 10;
+      const validRounds = this.rounds - this.currentRound >= 10;
+
+      if (validPoints && validRounds && this.lastOpponentMove) {
+        const N = this.opponentCooperations + this.opponentDefections;
+        const std_deviation = N ** (1 / 2) / 2;
+        const lower = N / 2 - 3 * std_deviation;
+        const upper = N / 2 + 3 * std_deviation;
+
+        if (
+          this.rememberedNumberOfOpponentDefectioons <= lower ||
+          this.rememberedNumberOfOpponentDefectioons >= upper
+        ) {
+          this.lastFreshStart = this.currentRound;
+          this.freshStart();
+          this.isFreshStart = true;
+          return this.setLastOwnMove(true);
+        }
+      }
+    }
+    if (this.isRetaliating) {
+      this.decreaseRetaliationCounter();
+      return this.setLastOwnMove(false);
+    }
+
+    if (!this.lastOpponentMove) {
+      this.isRetaliating = true;
+      this.retaliationLength++;
+      this.retaliationRemaining = this.retaliationLength;
+      this.decreaseRetaliationCounter();
+      return this.setLastOwnMove(false);
+    }
+
+    return this.setLastOwnMove(true);
+  }
 
   setOpponentMove(move: Move): void {
     if (move) {
