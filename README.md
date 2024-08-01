@@ -18,8 +18,8 @@ A simple web page that lets you test different strategies against each other on 
 - Shubik: The player cooperates, until the opponent betrays them, then it defect for n moves, and starts cooperating again, if betrayed again, it defects for n + 1 moves
 - Stein & rapoport: Cooperates the first 5 moves, play Tit 4 Tat the next 10 moves, after this, it will check if the other player is playing randomly, if true, always defects, if not, it plays Tit 4 Tat. Will repeat the randomness check every 15 moves
 - Random: Cooperates or defects randomly
+- Tideman & Chieruzzi: Cooperates until opponent betrays it, then it defects for n moves and cooperates again, if betrayed again, will defect for n + 1 moves, if certain confitions are met, it will give its opponent a fresh start, forgetting everything up to that point, and cooperating for the next 2 rounds
 - Tit 4 Tat: Imitates the movement the other strategy did in the last move
 - Tullock: Cooperates the first 11 moves, then randonmy cooperates, with a probability 10% less than his opponent on the alst 10 moves
 
 # Not implemented strategies
-- Tideman & Chieruzzi
