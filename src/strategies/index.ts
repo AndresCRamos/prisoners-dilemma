@@ -21,6 +21,7 @@ import Shubik from "./Shubik";
 import Tullock from "./Tullock";
 import Downing from "./Downing";
 import Nydegger from "./Nydegger";
+import TidemanAndChieruzzi from "./TidemanAndChieruzzi";
 
 export type StrategyClassMap = {
   [key: string]: StrategyConstructor;
@@ -41,6 +42,7 @@ const strategyClassesConst = {
   Random: RandomStrategy,
   Shubik,
   "Stein and Rapaport": SteinAndRapaport,
+  TidemanAndChieruzzi,
   "Tit for Tat": TitForTat,
   Tullock,
 } as const;
