@@ -4,6 +4,7 @@ import StrategySelector from "./StrategySelector";
 import { simulatePlay } from "../utils/simulation";
 import RoundsInput from "./RoundsInput";
 import { useSimulation } from "../hooks/useSimulation";
+import { Button, Center } from "@mantine/core";
 
 const StrategySimulationForm = () => {
   const {
@@ -49,9 +50,11 @@ const StrategySimulationForm = () => {
         selectedStrategy={strategy2Name}
       />
       <RoundsInput />
-      <button type="submit" disabled={!bothStrategiesSelected}>
-        Simulate
-      </button>
+      <Center>
+        <Button type="submit" disabled={!bothStrategiesSelected}>
+          Simulate
+        </Button>
+      </Center>
     </form>
   );
 };
