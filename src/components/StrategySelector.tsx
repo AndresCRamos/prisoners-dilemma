@@ -1,5 +1,6 @@
 import React from "react";
 import { StrategyName, strategyNames } from "../strategies";
+import { Select } from "@mantine/core";
 
 interface StrategySelectorProps {
   id: string;
@@ -12,22 +13,23 @@ const StrategySelector: React.FC<StrategySelectorProps> = ({
   selectedStrategy,
   onStrategyChange,
 }) => {
-  const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    const selectedValue = event.target.value as StrategyName;
-    onStrategyChange(selectedValue);
+  const handleChange = (selectedValue: string | null): void => {
+    const selectedStrategy = selectedValue as StrategyName;
+    onStrategyChange(selectedStrategy);
   };
 
   return (
     <div>
-      <label htmlFor={id}>Select Strategy</label>
-      <select id={id} value={selectedStrategy} onChange={handleChange}>
-        <option value="">Select a strategy</option>
-        {strategyNames.map((strategyName) => (
-          <option key={strategyName} value={strategyName}>
-            {strategyName}
-          </option>
-        ))}
-      </select>
+      <Select
+        id={id}
+        data={strategyNames}
+        value={selectedStrategy}
+        placeholder="Select a strategy"
+        onChange={handleChange}
+        allowDeselect={false}
+        searchable
+        required
+      />
     </div>
   );
 };
