@@ -57,7 +57,7 @@ const StrategySimulationForm = () => {
           />
         </Fieldset>
         <RoundsInput />
-        <Center>
+        <Center className="mt-4 mb-2">
           <Button type="submit" disabled={!bothStrategiesSelected}>
             Simulate
           </Button>
