@@ -4,7 +4,7 @@ import StrategySelector from "./StrategySelector";
 import { simulatePlay } from "../utils/simulation";
 import RoundsInput from "./RoundsInput";
 import { useSimulation } from "../hooks/useSimulation";
-import { Button, Center, Fieldset } from "@mantine/core";
+import { Button, Center, Container, Fieldset } from "@mantine/core";
 
 const StrategySimulationForm = () => {
   const {
@@ -38,26 +38,28 @@ const StrategySimulationForm = () => {
   );
 
   return (
-    <form onSubmit={handleSubmit}>
-      <Fieldset legend="Select the strategies">
-        <StrategySelector
-          id="strategy_selector_1"
-          onStrategyChange={handleStrategy1}
-          selectedStrategy={strategy1Name}
-        />
-        <StrategySelector
-          id="strategy_selector_2"
-          onStrategyChange={handleStrategy2}
-          selectedStrategy={strategy2Name}
-        />
-      </Fieldset>
-      <RoundsInput />
-      <Center>
-        <Button type="submit" disabled={!bothStrategiesSelected}>
-          Simulate
-        </Button>
-      </Center>
-    </form>
+    <Container>
+      <form onSubmit={handleSubmit}>
+        <Fieldset legend="Select the strategies">
+          <StrategySelector
+            id="strategy_selector_1"
+            onStrategyChange={handleStrategy1}
+            selectedStrategy={strategy1Name}
+          />
+          <StrategySelector
+            id="strategy_selector_2"
+            onStrategyChange={handleStrategy2}
+            selectedStrategy={strategy2Name}
+          />
+        </Fieldset>
+        <RoundsInput />
+        <Center>
+          <Button type="submit" disabled={!bothStrategiesSelected}>
+            Simulate
+          </Button>
+        </Center>
+      </form>
+    </Container>
   );
 };
 
