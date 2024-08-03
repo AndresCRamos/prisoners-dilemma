@@ -1,9 +1,9 @@
 import React, { useMemo } from "react";
-import { StrategyName } from "../strategies";
-import StrategySelector from "./StrategySelector";
-import { simulatePlay } from "../utils/simulation";
-import RoundsInput from "./RoundsInput";
-import { useSimulation } from "../hooks/useSimulation";
+import { StrategyName } from "../../strategies";
+import StrategySelector from "../StrategySelector";
+import { simulatePlay } from "../../utils/simulation";
+import RoundsInput from "../RoundsInput";
+import { useSimulation } from "../../hooks/useSimulation";
 import { Button, Center, Container, Fieldset } from "@mantine/core";
 import classes from "./StrategySimulatorForm.module.css";
 
