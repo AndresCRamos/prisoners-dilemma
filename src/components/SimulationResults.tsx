@@ -1,3 +1,4 @@
+import { Container, Table, TableData } from "@mantine/core";
 import { useSimulation } from "../hooks/useSimulation";
 
 const SimulationResult = () => {
@@ -6,31 +7,41 @@ const SimulationResult = () => {
     return <p>No results to display</p>;
   }
 
+  const tableData: TableData = {
+    head: [
+      "Round",
+      `${results.strategy1} Move`,
+      `${results.strategy1} Points`,
+      `${results.strategy2} Move`,
+      `${results.strategy2} Points`,
+    ],
+    body: results.rounds.map((round) => [
+      round.round,
+      round.strategy1Move ? "Cooperate" : "Defect",
+      round.strategy2Move ? "Cooperate" : "Defect",
+      round.strategy1Points,
+      round.strategy2Points,
+    ]),
+  };
+
   return (
-    <div>
+    <div className="">
       <h2>Simulation Results</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Round</th>
-            <th>{results.strategy1} Move</th>
-            <th>{results.strategy2} Move</th>
-            <th>{results.strategy1} Points</th>
-            <th>{results.strategy2} Points</th>
-          </tr>
-        </thead>
-        <tbody>
-          {results.rounds.map((round) => (
-            <tr key={round.round}>
-              <td>{round.round}</td>
-              <td>{round.strategy1Move ? "Cooperate" : "Defect"}</td>
-              <td>{round.strategy2Move ? "Cooperate" : "Defect"}</td>
-              <td>{round.strategy1Points}</td>
-              <td>{round.strategy2Points}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+      <Container>
+        <Table
+          striped="even"
+          data={tableData}
+          stickyHeader
+          withColumnBorders
+          withRowBorders={false}
+          withTableBorder
+          classNames={{
+            th: "text-center",
+            td: "text-center",
+            thead: "bg-[--table-striped-color]",
+          }}
+        />
+      </Container>
       <h3>Final Score</h3>
       <p>
         {results.strategy1}: {results.finalScore.strategy1}
