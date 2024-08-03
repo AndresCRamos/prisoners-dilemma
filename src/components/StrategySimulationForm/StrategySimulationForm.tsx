@@ -41,7 +41,10 @@ const StrategySimulationForm = () => {
   return (
     <Container>
       <form onSubmit={handleSubmit} className={classes.form}>
-        <Fieldset legend="Select the strategies">
+        <Fieldset
+          legend="Select the strategies"
+          className="flex flex-col gap-4"
+        >
           <StrategySelector
             id="strategy_selector_1"
             onStrategyChange={handleStrategy1}
