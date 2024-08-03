@@ -1,0 +1,5 @@
+.form {
+    border: calc(0.0625rem * var(--mantine-scale)) var(--mantine-color-gray-3) solid;
+    border-radius: var(--mantine-radius-default);
+    @apply p-4
+}

@@ -5,6 +5,7 @@ import { simulatePlay } from "../utils/simulation";
 import RoundsInput from "./RoundsInput";
 import { useSimulation } from "../hooks/useSimulation";
 import { Button, Center, Container, Fieldset } from "@mantine/core";
+import classes from "./StrategySimulatorForm.module.css";
 
 const StrategySimulationForm = () => {
   const {
@@ -39,7 +40,7 @@ const StrategySimulationForm = () => {
 
   return (
     <Container>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className={classes.form}>
         <Fieldset legend="Select the strategies">
           <StrategySelector
             id="strategy_selector_1"
