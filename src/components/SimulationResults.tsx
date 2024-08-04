@@ -1,8 +1,23 @@
-import { Container, Table, TableData } from "@mantine/core";
+import {
+  Button,
+  Center,
+  Collapse,
+  Container,
+  Table,
+  TableData,
+  Text,
+  Title,
+} from "@mantine/core";
 import { useSimulation } from "../hooks/useSimulation";
+import { useDisclosure } from "@mantine/hooks";
+import { useEffect } from "react";
 
 const SimulationResult = () => {
   const { results } = useSimulation();
+  const [showResultsTable, { toggle, close }] = useDisclosure(false);
+  useEffect(() => {
+    close();
+  }, [results]);
   if (results === null) {
     return (
       <Container>
@@ -31,9 +46,19 @@ const SimulationResult = () => {
   };
 
   return (
-    <div className="">
-      <h2>Simulation Results</h2>
-      <Container>
+    <Container>
+      <Title>Simulation Results</Title>
+      <h3>Final Score</h3>
+      <p>
+        {results.strategy1}: {results.finalScore.strategy1}
+      </p>
+      <p>
+        {results.strategy2}: {results.finalScore.strategy2}
+      </p>
+      <Center className="mb-2">
+        <Button onClick={toggle}>Show rounds</Button>
+      </Center>
+      <Collapse in={showResultsTable} transitionDuration={500} className="mb-4">
         <Table
           striped="even"
           data={tableData}
@@ -47,15 +72,8 @@ const SimulationResult = () => {
             thead: "bg-[--table-striped-color]",
           }}
         />
-      </Container>
-      <h3>Final Score</h3>
-      <p>
-        {results.strategy1}: {results.finalScore.strategy1}
-      </p>
-      <p>
-        {results.strategy2}: {results.finalScore.strategy2}
-      </p>
-    </div>
+      </Collapse>
+    </Container>
   );
 };
 

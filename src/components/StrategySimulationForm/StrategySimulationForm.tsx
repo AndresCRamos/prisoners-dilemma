@@ -28,6 +28,7 @@ const StrategySimulationForm = () => {
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
     if (strategy1Name && strategy2Name) {
+      setResults(null);
       const results = simulatePlay(strategy1Name, strategy2Name, rounds);
       setResults(results);
     }
