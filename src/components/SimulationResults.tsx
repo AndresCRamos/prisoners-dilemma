@@ -4,7 +4,13 @@ import { useSimulation } from "../hooks/useSimulation";
 const SimulationResult = () => {
   const { results } = useSimulation();
   if (results === null) {
-    return <p>No results to display</p>;
+    return (
+      <Container>
+        <Text mt={4} ta="center">
+          No results to display
+        </Text>
+      </Container>
+    );
   }
 
   const tableData: TableData = {
