@@ -8,7 +8,7 @@ import {
   Text,
   Title,
 } from "@mantine/core";
-import { useSimulation } from "../hooks/useSimulation";
+import { useSimulation } from "../../hooks/useSimulation";
 import { useDisclosure } from "@mantine/hooks";
 import { useEffect } from "react";
 
