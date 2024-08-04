@@ -3,6 +3,8 @@ import {
   Center,
   Collapse,
   Container,
+  Group,
+  Stack,
   Table,
   TableData,
   Text,
@@ -11,6 +13,7 @@ import {
 import { useSimulation } from "../../hooks/useSimulation";
 import { useDisclosure } from "@mantine/hooks";
 import { useEffect } from "react";
+import SimulationPoints from "./SimulationPoints";
 
 const SimulationResult = () => {
   const { results } = useSimulation();
@@ -47,14 +50,20 @@ const SimulationResult = () => {
 
   return (
     <Container>
-      <Title>Simulation Results</Title>
-      <h3>Final Score</h3>
-      <p>
-        {results.strategy1}: {results.finalScore.strategy1}
-      </p>
-      <p>
-        {results.strategy2}: {results.finalScore.strategy2}
-      </p>
+      <Title order={2}>Simulation Results</Title>
+      <Title order={3}>Final Score</Title>
+      <Stack className="mb-4">
+        <Group justify="center" wrap="nowrap">
+          <SimulationPoints
+            strategy_name={results.strategy1}
+            strategy_points={results.finalScore.strategy1}
+          />
+          <SimulationPoints
+            strategy_name={results.strategy2}
+            strategy_points={results.finalScore.strategy2}
+          />
+        </Group>
+      </Stack>
       <Center className="mb-2">
         <Button onClick={toggle}>Show rounds</Button>
       </Center>
