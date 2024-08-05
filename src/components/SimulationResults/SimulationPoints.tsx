@@ -12,8 +12,13 @@ const SimulationPoints: React.FC<SimulationPointsProps> = ({
 }) => {
   return (
     <Group className="gap-1">
-      <Text component="span">{strategy_name}:</Text>
-      <Text>{strategy_points}</Text>
+      <Text
+        component="span"
+        className="font-bold text-[--mantine-primary-color-9]"
+      >
+        {strategy_name}:
+      </Text>
+      <Text className="font-extralight">{strategy_points}</Text>
     </Group>
   );
 };
