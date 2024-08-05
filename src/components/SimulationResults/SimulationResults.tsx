@@ -14,10 +14,12 @@ import { useSimulation } from "../../hooks/useSimulation";
 import { useDisclosure } from "@mantine/hooks";
 import { useEffect } from "react";
 import SimulationPoints from "./SimulationPoints";
+import SimulationWinnerChip from "./SimulationWinnerChip";
 
 const SimulationResult = () => {
   const { results } = useSimulation();
   const [showResultsTable, { toggle, close }] = useDisclosure(false);
+
   useEffect(() => {
     close();
   }, [results]);
@@ -48,12 +50,19 @@ const SimulationResult = () => {
     ]),
   };
 
+  const decideWinner = {
+    strategy1Name: results.strategy1,
+    strategy1Points: results.finalScore.strategy1,
+    strategy2Name: results.strategy2,
+    strategy2Points: results.finalScore.strategy2,
+  };
+
   return (
     <Container>
       <Title order={2}>Simulation Results</Title>
       <Title order={3}>Final Score</Title>
       <Stack className="mb-4">
-        <Group justify="center" wrap="nowrap">
+        <Group justify="center">
           <SimulationPoints
             strategy_name={results.strategy1}
             strategy_points={results.finalScore.strategy1}
@@ -63,6 +72,9 @@ const SimulationResult = () => {
             strategy_points={results.finalScore.strategy2}
           />
         </Group>
+        <Center>
+          <SimulationWinnerChip {...decideWinner} />
+        </Center>
       </Stack>
       <Center className="mb-2">
         <Button onClick={toggle}>Show rounds</Button>
