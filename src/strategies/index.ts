@@ -42,7 +42,7 @@ const strategyClassesConst = {
   Random: RandomStrategy,
   Shubik,
   "Stein and Rapaport": SteinAndRapaport,
-  TidemanAndChieruzzi,
+  "Tideman and Chieruzzi": TidemanAndChieruzzi,
   "Tit for Tat": TitForTat,
   Tullock,
 } as const;
