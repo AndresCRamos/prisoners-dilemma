@@ -1,18 +1,37 @@
+import ThemeToggle from "./components/ThemeToggle";
 import SimulationGame from "./components/SimulationGame";
-import { Center, MantineProvider, Title } from "@mantine/core";
+import {
+  AppShell,
+  AppShellHeader,
+  AppShellMain,
+  Center,
+  MantineProvider,
+  Title,
+} from "@mantine/core";
 
 function App() {
   return (
     <MantineProvider>
-      <Center>
-        <Title
-          className="text-center my-4 bg-gradient-to-t from-[--mantine-primary-color-filled] inline-block text-transparent bg-clip-text"
-          variant="gradient"
+      <AppShell header={{ height: 60 }}>
+        <AppShellHeader
+          classNames={{
+            header: "flex justify-end pr-4",
+          }}
         >
-          The Prisoners Dilemma
-        </Title>
-      </Center>
-      <SimulationGame />
+          <ThemeToggle />
+        </AppShellHeader>
+        <AppShellMain>
+          <Center>
+            <Title
+              className="text-center my-4 bg-gradient-to-t from-[--mantine-primary-color-filled] inline-block text-transparent bg-clip-text"
+              variant="gradient"
+            >
+              The Prisoners Dilemma
+            </Title>
+          </Center>
+          <SimulationGame />
+        </AppShellMain>
+      </AppShell>
     </MantineProvider>
   );
 }
