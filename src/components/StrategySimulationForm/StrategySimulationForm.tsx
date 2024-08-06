@@ -5,7 +5,6 @@ import { simulatePlay } from "../../utils/simulation";
 import RoundsInput from "../RoundsInput";
 import { useSimulation } from "../../hooks/useSimulation";
 import { Button, Center, Container, Fieldset } from "@mantine/core";
-import classes from "./StrategySimulatorForm.module.css";
 
 const StrategySimulationForm = () => {
   const {
