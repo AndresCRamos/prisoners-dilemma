@@ -5,7 +5,6 @@ import { simulatePlay } from "../../utils/simulation";
 import RoundsInput from "../RoundsInput";
 import { useSimulation } from "../../hooks/useSimulation";
 import { Button, Center, Container, Fieldset } from "@mantine/core";
-import classes from "./StrategySimulatorForm.module.css";
 
 const StrategySimulationForm = () => {
   const {
@@ -41,29 +40,31 @@ const StrategySimulationForm = () => {
 
   return (
     <Container>
-      <form onSubmit={handleSubmit} className={classes.form}>
-        <Fieldset
-          legend="Select the strategies"
-          className="flex flex-col gap-4"
-        >
-          <StrategySelector
-            id="strategy_selector_1"
-            onStrategyChange={handleStrategy1}
-            selectedStrategy={strategy1Name}
-          />
-          <StrategySelector
-            id="strategy_selector_2"
-            onStrategyChange={handleStrategy2}
-            selectedStrategy={strategy2Name}
-          />
-        </Fieldset>
-        <RoundsInput />
-        <Center className="mt-4 mb-2">
-          <Button type="submit" disabled={!bothStrategiesSelected}>
-            Simulate
-          </Button>
-        </Center>
-      </form>
+      <Fieldset>
+        <form onSubmit={handleSubmit}>
+          <Fieldset
+            legend="Select the strategies"
+            className="flex flex-col gap-4"
+          >
+            <StrategySelector
+              id="strategy_selector_1"
+              onStrategyChange={handleStrategy1}
+              selectedStrategy={strategy1Name}
+            />
+            <StrategySelector
+              id="strategy_selector_2"
+              onStrategyChange={handleStrategy2}
+              selectedStrategy={strategy2Name}
+            />
+          </Fieldset>
+          <RoundsInput />
+          <Center className="mt-4 mb-2">
+            <Button type="submit" disabled={!bothStrategiesSelected}>
+              Simulate
+            </Button>
+          </Center>
+        </form>
+      </Fieldset>
     </Container>
   );
 };
