@@ -1,14 +1,12 @@
-import ThemeToggle from "./components/ThemeToggle";
-import SimulationGame from "./components/SimulationGame";
 import {
   AppShell,
   AppShellHeader,
   AppShellMain,
-  Container,
   MantineProvider,
-  Title,
 } from "@mantine/core";
 import MainTitle from "./components/MainTitle";
+import SimulationGame from "./components/SimulationGame";
+import ThemeToggle from "./components/ThemeToggle";
 
 function App() {
   return (
@@ -22,16 +20,8 @@ function App() {
           <ThemeToggle />
         </AppShellHeader>
         <AppShellMain>
-          <Container>
-            <MainTitle />
-            <Title
-              className="text-center my-4 bg-gradient-to-t from-[--mantine-primary-color-filled] inline-block text-transparent bg-clip-text"
-              variant="gradient"
-            >
-              The Prisoners Dilemma
-            </Title>
-            <SimulationGame />
-          </Container>
+          <MainTitle />
+          <SimulationGame />
         </AppShellMain>
       </AppShell>
     </MantineProvider>
