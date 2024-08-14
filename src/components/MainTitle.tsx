@@ -1,17 +1,28 @@
-import { Grid, Text, Title } from "@mantine/core";
+import { Center, Grid, Text, Title } from "@mantine/core";
 
 function MainTitle() {
   return (
     <>
-      <Grid align="center" justify="center">
+      <Grid justify="center" align="center">
         <Grid.Col span={{ base: 12, sm: 6 }}>
-          <Title className="text-center my-4 bg-gradient-to-t from-[--mantine-primary-color-filled] inline-block text-transparent bg-clip-text border-white border-2 focus:border-red-600">
-            The Prisoners Dilemma
-          </Title>
+          <Center>
+            <Title
+              order={1}
+              className="bg-gradient-to-t from-[--mantine-primary-color-filled] inline-block text-transparent bg-clip-text"
+            >
+              The Prisoners Dilemma
+            </Title>
+          </Center>
         </Grid.Col>
         <Grid.Col span={{ base: 12, sm: 6 }}>
-          <Text>The most famous game theory paradox</Text>
-          <Text> Test</Text>
+          <Center className="flex-col">
+            <Title order={2} size="xl" className="font-semibold">
+              The most famous game theory paradox
+            </Title>
+            <Text className="font-light">
+              A game about cooperation, betrayal and life
+            </Text>
+          </Center>
         </Grid.Col>
       </Grid>
     </>
