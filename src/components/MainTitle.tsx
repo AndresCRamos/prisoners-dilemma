@@ -1,6 +1,19 @@
 import { Button, Center, Grid, Text, Title } from "@mantine/core";
+import { useScrollIntoView } from "@mantine/hooks";
 
-function MainTitle() {
+type ScrollIntoViewType = ReturnType<
+  typeof useScrollIntoView
+>["scrollIntoView"];
+
+interface MainTitleProps {
+  scrollToPlay: ScrollIntoViewType
+}
+
+function MainTitle({scrollToPlay}:MainTitleProps) {
+  function handleScroll() {
+    scrollToPlay({alignment: "center"})
+  }
+
   return (
     <>
       <Grid justify="center" align="center">
@@ -29,7 +42,7 @@ function MainTitle() {
             Want to test some of the strategies?
           </Text>
           <Center>
-            <Button className="mx-auto">Play</Button>
+            <Button className="mx-auto" onClick={handleScroll}>Play</Button>
           </Center>
         </Grid.Col>
         <Grid.Col span={{ base: 12, sm: 6 }}>
