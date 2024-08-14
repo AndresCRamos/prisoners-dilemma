@@ -15,7 +15,7 @@ function App() {
   const {
     scrollIntoView: scrollToPlay,
     targetRef: playRef,
-  } = useScrollIntoView<HTMLDivElement>()
+  } = useScrollIntoView<HTMLDivElement>({offset: 72,})
   return (
     <MantineProvider>
       <AppShell header={{ height: 60 }} padding="sm">

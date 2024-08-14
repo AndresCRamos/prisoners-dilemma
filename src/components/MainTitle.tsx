@@ -11,7 +11,7 @@ interface MainTitleProps {
 
 function MainTitle({scrollToPlay}:MainTitleProps) {
   function handleScroll() {
-    scrollToPlay({alignment: "center"})
+    scrollToPlay({alignment: "start"})
   }
 
   return (
