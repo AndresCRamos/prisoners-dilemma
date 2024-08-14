@@ -1,18 +1,24 @@
-import ThemeToggle from "./components/ThemeToggle";
-import SimulationGame from "./components/SimulationGame";
 import {
   AppShell,
   AppShellHeader,
   AppShellMain,
-  Center,
+  Box,
   MantineProvider,
-  Title,
 } from "@mantine/core";
+import { useScrollIntoView } from "@mantine/hooks";
+import MainTitle from "./components/MainTitle";
+import Section from "./components/Section";
+import SimulationGame from "./components/SimulationGame";
+import ThemeToggle from "./components/ThemeToggle";
 
 function App() {
+  const {
+    scrollIntoView: scrollToPlay,
+    targetRef: playRef,
+  } = useScrollIntoView<HTMLDivElement>({offset: 72,})
   return (
     <MantineProvider>
-      <AppShell header={{ height: 60 }}>
+      <AppShell header={{ height: 60 }} padding="sm">
         <AppShellHeader
           classNames={{
             header: "flex justify-end pr-4",
@@ -21,15 +27,14 @@ function App() {
           <ThemeToggle />
         </AppShellHeader>
         <AppShellMain>
-          <Center>
-            <Title
-              className="text-center my-4 bg-gradient-to-t from-[--mantine-primary-color-filled] inline-block text-transparent bg-clip-text"
-              variant="gradient"
-            >
-              The Prisoners Dilemma
-            </Title>
-          </Center>
-          <SimulationGame />
+          <Section>
+            <MainTitle scrollToPlay={scrollToPlay}/>
+          </Section>
+          <Section>
+            <Box ref={playRef}>
+            <SimulationGame/>
+            </Box>
+          </Section>
         </AppShellMain>
       </AppShell>
     </MantineProvider>
