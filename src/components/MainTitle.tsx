@@ -1,4 +1,4 @@
-import { Center, Grid, Text, Title } from "@mantine/core";
+import { Button, Center, Grid, Text, Title } from "@mantine/core";
 
 function MainTitle() {
   return (
@@ -22,6 +22,22 @@ function MainTitle() {
             <Text className="font-light">
               A game about cooperation, betrayal and life
             </Text>
+          </Center>
+        </Grid.Col>
+        <Grid.Col span={{ base: 12, sm: 6 }}>
+          <Text className="text-center">
+            Want to test some of the strategies?
+          </Text>
+          <Center>
+            <Button className="mx-auto">Play</Button>
+          </Center>
+        </Grid.Col>
+        <Grid.Col span={{ base: 12, sm: 6 }}>
+          <Text className="text-center">
+            Curious about this paradoxical game?
+          </Text>
+          <Center>
+            <Button variant="light">Learn more</Button>
           </Center>
         </Grid.Col>
       </Grid>
