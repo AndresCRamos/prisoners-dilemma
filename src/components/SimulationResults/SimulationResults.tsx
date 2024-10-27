@@ -10,9 +10,9 @@ import {
   Text,
   Title,
 } from "@mantine/core";
-import { useSimulation } from "../../hooks/useSimulation";
 import { useDisclosure } from "@mantine/hooks";
 import { useEffect } from "react";
+import { useSimulation } from "../../hooks/useSimulation";
 import SimulationPoints from "./SimulationPoints";
 import SimulationWinnerChip from "./SimulationWinnerChip";
 
@@ -80,6 +80,7 @@ const SimulationResult = () => {
         <Button onClick={toggle}>Show rounds</Button>
       </Center>
       <Collapse in={showResultsTable} transitionDuration={500} className="mb-4">
+        <Table.ScrollContainer minWidth={200}>
         <Table
           striped="even"
           data={tableData}
@@ -92,7 +93,8 @@ const SimulationResult = () => {
             td: "text-center",
             thead: "bg-[--table-striped-color]",
           }}
-        />
+          />
+          </Table.ScrollContainer>
       </Collapse>
     </Container>
   );
