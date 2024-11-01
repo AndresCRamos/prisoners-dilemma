@@ -2,7 +2,4 @@
   min-height: calc(
     100dvh - var(--app-shell-header-offset, 0rem) - var(--app-shell-padding)
   );
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
 }
