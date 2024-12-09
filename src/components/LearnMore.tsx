@@ -54,11 +54,19 @@ const LearnMore: React.FC = () => {
               he gets mad at you)
             </List.Item>
             <List.Item>
-              If he betrays you, he gets free, but you get 5 years (and he gets
-              mad at you)
+              If he betrays you, he gets free, but you get 5 years
             </List.Item>
             <List.Item>If both betray each other, both get 3 year</List.Item>
           </List>
+          <Title order={4}>The real dilemma</Title>
+          <Text>
+            You start to think, the best course of action, following logic is to
+            betray your friend, since by doing that you avoid the least
+            desirable scenario (5 years of prison), and simultaneously the best
+            scenario for you is possible (get free), but if both you and your
+            friend decide to betray each other, both will end with 3 years, when
+            there is a better outcome, remain silent and get 1 year each
+          </Text>
         </Stack>
       </Container>
     </>
