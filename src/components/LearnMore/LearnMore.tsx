@@ -87,7 +87,6 @@ const LearnMore: React.FC = () => {
             </List.Item>
           </List>
           <Text>The outcomes for each one turn out to be:</Text>
-          TODO: Create table of outcomes
           <OutcomeTable />
           <Text>In this form, the outcomes can be described as:</Text>
           <List listStyleType="initial" withPadding>
