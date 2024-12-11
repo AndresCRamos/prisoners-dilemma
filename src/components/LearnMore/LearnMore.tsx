@@ -1,5 +1,6 @@
 import { Blockquote, Container, List, Stack, Text, Title } from "@mantine/core";
 import React from "react";
+import OutcomeTable from "./OutcomeTable";
 const LearnMore: React.FC = () => {
   return (
     <>
@@ -23,7 +24,7 @@ const LearnMore: React.FC = () => {
             crime, you are not allow to communicate whatsoever with your friend,
             and the cop tells you that, while they have evidence for a lesser
             charge, that will get you and your friend each one year in jail, he
-            admits they dont have enough evidence for the main charge, so he
+            admits they don't have enough evidence for the main charge, so he
             offers a bargain.
           </Text>
           <Title order={4}>Bargain: Betray your friend?</Title>
@@ -87,6 +88,7 @@ const LearnMore: React.FC = () => {
           </List>
           <Text>The outcomes for each one turn out to be:</Text>
           TODO: Create table of outcomes
+          <OutcomeTable />
           <Text>In this form, the outcomes can be described as:</Text>
           <List listStyleType="initial" withPadding>
             <List.Item>
