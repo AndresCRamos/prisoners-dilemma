@@ -6,12 +6,12 @@ type ScrollIntoViewType = ReturnType<
 >["scrollIntoView"];
 
 interface MainTitleProps {
-  scrollToPlay: ScrollIntoViewType
+  scrollToPlay: ScrollIntoViewType;
 }
 
-function MainTitle({scrollToPlay}:MainTitleProps) {
+function MainTitle({ scrollToPlay }: MainTitleProps) {
   function handleScroll() {
-    scrollToPlay({alignment: "start"})
+    scrollToPlay({ alignment: "start" });
   }
 
   return (
@@ -21,7 +21,7 @@ function MainTitle({scrollToPlay}:MainTitleProps) {
           <Center>
             <Title
               order={1}
-              className="bg-gradient-to-t from-[--mantine-primary-color-filled] inline-block text-transparent bg-clip-text"
+              className="bg-gradient-to-t from-[--mantine-primary-color-filled] inline-block text-transparent bg-clip-text text-center"
             >
               The Prisoners Dilemma
             </Title>
@@ -42,7 +42,9 @@ function MainTitle({scrollToPlay}:MainTitleProps) {
             Want to test some of the strategies?
           </Text>
           <Center>
-            <Button className="mx-auto" onClick={handleScroll}>Play</Button>
+            <Button className="mx-auto" onClick={handleScroll}>
+              Play
+            </Button>
           </Center>
         </Grid.Col>
         <Grid.Col span={{ base: 12, sm: 6 }}>
