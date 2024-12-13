@@ -4,7 +4,7 @@ import OutcomeTable from "./OutcomeTable";
 
 const FormalNotation: React.FC = () => {
   return (
-    <Stack component={"article"}>
+    <Stack component={"article"} gap={"xs"}>
       <Title order={2}>Back to basics: The formal side</Title>
       <Text>
         Now that we have an intuitive understanding of the game itself, lets

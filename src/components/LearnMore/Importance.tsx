@@ -3,7 +3,7 @@ import React from "react";
 
 const Importance: React.FC = () => {
   return (
-    <Stack component={"article"}>
+    <Stack component={"article"} gap={"xs"}>
       <Title order={2}>Why its important?</Title>
       <Text>
         This shows the real dilemma: the choice between looking out for yourself

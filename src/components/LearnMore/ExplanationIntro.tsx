@@ -3,7 +3,7 @@ import React from "react";
 
 const ExplanationIntro: React.FC = () => {
   return (
-    <Stack component={"article"}>
+    <Stack component={"article"} gap={"xs"}>
       <Title order={2}>What's the Prisoners Dilemma?</Title>
       <Text>The prisoners dilemma in its formal form, is defined as:</Text>
       <Blockquote>

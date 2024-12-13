@@ -3,11 +3,12 @@ import React from "react";
 import ExplanationIntro from "./ExplanationIntro";
 import FormalNotation from "./FormalNotation";
 import Importance from "./Importance";
+
 const LearnMore: React.FC = () => {
   return (
     <>
       <Container>
-        <Stack gap={"md"}>
+        <Stack gap={"lg"}>
           <ExplanationIntro />
           <FormalNotation />
           <Importance />
