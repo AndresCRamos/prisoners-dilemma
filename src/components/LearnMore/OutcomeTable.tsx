@@ -5,6 +5,7 @@ const OutcomeTable: React.FC = () => {
   return (
     <Container size={"sm"}>
       <Table withColumnBorders>
+        <Table.Caption>Payoff table of the prisoner's dilemma</Table.Caption>
         <Table.Tbody>
           <Table.Tr>
             <Table.Td />
