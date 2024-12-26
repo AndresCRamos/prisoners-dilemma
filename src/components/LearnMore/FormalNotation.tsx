@@ -5,7 +5,9 @@ import OutcomeTable from "./OutcomeTable";
 const FormalNotation: React.FC = () => {
   return (
     <Stack component={"article"} gap={"xs"}>
-      <Title order={2}>Back to basics: The formal side</Title>
+      <Title order={2} className="text-[--mantine-primary-color-filled]">
+        Back to basics: The formal side
+      </Title>
       <Text>
         Now that we have an intuitive understanding of the game itself, lets
         define it in more formal game theory terms:

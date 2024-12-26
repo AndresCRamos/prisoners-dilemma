@@ -4,7 +4,9 @@ import React from "react";
 const Importance: React.FC = () => {
   return (
     <Stack component={"article"} gap={"xs"}>
-      <Title order={2}>Why its important?</Title>
+      <Title order={2} className="text-[--mantine-primary-color-filled]">
+        Why its important?
+      </Title>
       <Text>
         This shows the real dilemma: the choice between looking out for yourself
         and trusting someone else to do the same. Betraying seems safer because
@@ -13,7 +15,9 @@ const Importance: React.FC = () => {
         you and your friend could trust each other enough to stay silent, you’d
         both end up better off.
       </Text>
-      <Title order={3}>More than just a game</Title>
+      <Title order={3} className="text-[--mantine-primary-color-filled]">
+        More than just a game
+      </Title>
       <Text>
         The Prisoner’s Dilemma isn’t just a thought experiment; it mirrors
         real-life situations where trust and self-interest collide. Whether in
