@@ -1,25 +1,11 @@
-import { Blockquote, List, Stack, Text, Title } from "@mantine/core";
+import { List, Stack, Text, Title } from "@mantine/core";
 import React from "react";
 
 const ExplanationIntro: React.FC = () => {
   return (
     <Stack component={"article"} gap={"xs"}>
-      <Title order={2} className="text-[--mantine-primary-color-filled]">
-        What's the Prisoners Dilemma?
-      </Title>
-      <Text>The prisoners dilemma in its formal form, is defined as:</Text>
-      <Blockquote>
-        Is a game theory thought experiment involving two rational agents, each
-        of whom can either cooperate for mutual benefit or betray their partner
-        ("defect") for individual gain
-      </Blockquote>
-      <Text>A normal game follows the same structure</Text>
-      <Text>
-        But a more easier to get explanation would be actually explaining the
-        game
-      </Text>
       <Title order={3} className="text-[--mantine-primary-color-filled]">
-        Really what's the Prisoners Dilemma?
+        What is the Prisoner's Dilemma?
       </Title>
       <Text>
         Imagine this, you and a friend are arrested for being suspects for a
@@ -33,7 +19,7 @@ const ExplanationIntro: React.FC = () => {
       </Title>
       <Text>
         If you decide to testify against your friend, betraying him, your lesser
-        charge will be dropped, getting you free, but your friend would spend 5
+        charge will be dropped, setting you free, while your friend serves 5
         years in prison for the main charge
       </Text>
       <Title order={4} className="text-[--mantine-primary-color-filled]">
