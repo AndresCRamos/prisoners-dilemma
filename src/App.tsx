@@ -15,6 +15,10 @@ import ThemeToggle from "./components/ThemeToggle";
 function App() {
   const { scrollIntoView: scrollToPlay, targetRef: playRef } =
     useScrollIntoView<HTMLDivElement>({ offset: 72 });
+
+  const { scrollIntoView: scrollToLearnMore, targetRef: learnMoreRef } =
+    useScrollIntoView<HTMLDivElement>({ offset: 72 });
+
   return (
     <MantineProvider>
       <AppShell header={{ height: 60 }} padding="sm">
@@ -27,10 +31,15 @@ function App() {
         </AppShellHeader>
         <AppShellMain>
           <Section>
-            <MainTitle scrollToPlay={scrollToPlay} />
+            <MainTitle
+              scrollToPlay={scrollToPlay}
+              scrollToLearnMore={scrollToLearnMore}
+            />
           </Section>
           <Section>
-            <LearnMore />
+            <Box ref={learnMoreRef}>
+              <LearnMore />
+            </Box>
           </Section>
           <Section>
             <Box ref={playRef}>

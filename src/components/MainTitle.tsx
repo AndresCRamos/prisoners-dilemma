@@ -6,12 +6,17 @@ type ScrollIntoViewType = ReturnType<
 >["scrollIntoView"];
 
 interface MainTitleProps {
-  scrollToPlay: ScrollIntoViewType
+  scrollToPlay: ScrollIntoViewType;
+  scrollToLearnMore: ScrollIntoViewType;
 }
 
-function MainTitle({scrollToPlay}:MainTitleProps) {
-  function handleScroll() {
-    scrollToPlay({alignment: "start"})
+function MainTitle({ scrollToPlay, scrollToLearnMore }: MainTitleProps) {
+  function handleScrollToPlay() {
+    scrollToPlay({ alignment: "start" });
+  }
+
+  function handleScrollToLearnMore() {
+    scrollToLearnMore({ alignment: "start" });
   }
 
   return (
@@ -42,7 +47,9 @@ function MainTitle({scrollToPlay}:MainTitleProps) {
             Want to test some of the strategies?
           </Text>
           <Center>
-            <Button className="mx-auto" onClick={handleScroll}>Play</Button>
+            <Button className="mx-auto" onClick={handleScrollToPlay}>
+              Play
+            </Button>
           </Center>
         </Grid.Col>
         <Grid.Col span={{ base: 12, sm: 6 }}>
@@ -50,7 +57,9 @@ function MainTitle({scrollToPlay}:MainTitleProps) {
             Curious about this paradoxical game?
           </Text>
           <Center>
-            <Button variant="light">Learn more</Button>
+            <Button variant="light" onClick={handleScrollToLearnMore}>
+              Learn more
+            </Button>
           </Center>
         </Grid.Col>
       </Grid>
