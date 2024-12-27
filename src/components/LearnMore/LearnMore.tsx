@@ -1,6 +1,6 @@
 import { Container, Stack } from "@mantine/core";
 import React from "react";
-import AxelrodTournament from "./Axelrod";
+import AxelrodTournament from "./AxelrodTournament";
 import ExplanationIntro from "./ExplanationIntro";
 import FormalNotation from "./FormalNotation";
 import Importance from "./Importance";
