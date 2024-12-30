@@ -1,4 +1,4 @@
-import { Stack, Text, Title } from "@mantine/core";
+import { List, Stack, Text, Title } from "@mantine/core";
 import React from "react";
 import AxelrodOutcomeTable from "./AxelrodOutcomeTable";
 
@@ -36,12 +36,20 @@ const AxelrodTournament: React.FC = () => {
       <Title order={4} className="text-[--mantine-primary-color-filled]">
         The Rules
       </Title>
+      <Text>Axelrod established a few ground rules:</Text>
+      <List listStyleType="initial">
+        <List.Item>
+          Each strategy played against every other strategy, itself, and a
+          random strategy
+        </List.Item>
+        <List.Item>Each match consisted of 200 turns</List.Item>
+        <List.Item>
+          To ensure reliability, the entire tournament was repeated five times
+        </List.Item>
+      </List>
       <Text>
-        Axelrod established a few ground rules: Each strategy played against
-        every other strategy, itself, and a random strategy. Each match
-        consisted of 200 turns. To ensure reliability, the entire tournament was
-        repeated five times. With the rules set and strategies submitted, the
-        tournament began—and the results were anything but predictable.
+        With the rules set and strategies submitted, the tournament began, and
+        the results were anything but predictable.
       </Text>
     </Stack>
   );
