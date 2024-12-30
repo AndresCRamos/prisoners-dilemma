@@ -51,6 +51,16 @@ const AxelrodTournament: React.FC = () => {
         With the rules set and strategies submitted, the tournament began, and
         the results were anything but predictable.
       </Text>
+      <Title order={3} className="text-[--mantine-primary-color-filled]">
+        Sometimes less is more
+      </Title>
+      <Text>
+        One could think that the more complex strategies and cunning strategies
+        would dominate the tournament, complex strategies that could adapt and
+        take maximum advantage of their opponent. But thats not the case here,
+        the results showed a clear winner
+      </Text>
+      TODO General result table
     </Stack>
   );
 };
