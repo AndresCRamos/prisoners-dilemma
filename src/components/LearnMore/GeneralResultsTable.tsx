@@ -5,7 +5,7 @@ import { rows } from "./data";
 const GeneralResultsTable: React.FC = () => {
   return (
     <Table.ScrollContainer minWidth={320}>
-      <Table>
+      <Table withColumnBorders striped stripedColor="blue.1">
         <Table.Tbody>
           {rows.map((row, rowIndex) => (
             <Table.Tr tabIndex={rowIndex}>
