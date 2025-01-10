@@ -1,6 +1,7 @@
 import { List, Stack, Text, Title } from "@mantine/core";
 import React from "react";
 import AxelrodOutcomeTable from "./AxelrodOutcomeTable";
+import GeneralResultsTable from "./GeneralResultsTable";
 
 const AxelrodTournament: React.FC = () => {
   return (
@@ -61,6 +62,7 @@ const AxelrodTournament: React.FC = () => {
         the results showed a clear winner
       </Text>
       TODO General result table
+      <GeneralResultsTable />
     </Stack>
   );
 };
