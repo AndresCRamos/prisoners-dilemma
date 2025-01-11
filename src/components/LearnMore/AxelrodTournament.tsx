@@ -61,7 +61,6 @@ const AxelrodTournament: React.FC = () => {
         take maximum advantage of their opponent. But thats not the case here,
         the results showed a clear winner
       </Text>
-      TODO General result table
       <GeneralResultsTable />
     </Stack>
   );
