@@ -8,7 +8,6 @@ const GeneralResultsTable: React.FC = () => {
       <Table
         withColumnBorders
         striped
-        stripedColor="blue.1"
         layout="fixed"
         className="w-full border-collapse "
       >
@@ -21,7 +20,7 @@ const GeneralResultsTable: React.FC = () => {
               {row.map((cell, cellIndex) => (
                 <Table.Td
                   tabIndex={cellIndex}
-                  className="text-center w-[11ch] first:font-bold first:bg-[--mantine-primary-color-filled]"
+                  className="text-center first:w-[22ch] w-[12ch] first:font-bold first:bg-[--mantine-primary-color-filled]"
                 >
                   {cell}
                 </Table.Td>
