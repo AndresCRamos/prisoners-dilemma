@@ -81,20 +81,20 @@ const SimulationResult = () => {
       </Center>
       <Collapse in={showResultsTable} transitionDuration={500} className="mb-4">
         <Table.ScrollContainer minWidth={200}>
-        <Table
-          striped="even"
-          data={tableData}
-          stickyHeader
-          withColumnBorders
-          withRowBorders={false}
-          withTableBorder
-          classNames={{
-            th: "text-center",
-            td: "text-center",
-            thead: "bg-[--table-striped-color]",
-          }}
+          <Table
+            striped="even"
+            data={tableData}
+            stickyHeader
+            withColumnBorders
+            withRowBorders={false}
+            withTableBorder
+            classNames={{
+              th: "text-center",
+              td: "text-center",
+              thead: "bg-[--table-striped-color]",
+            }}
           />
-          </Table.ScrollContainer>
+        </Table.ScrollContainer>
       </Collapse>
     </Container>
   );

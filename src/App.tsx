@@ -6,16 +6,19 @@ import {
   MantineProvider,
 } from "@mantine/core";
 import { useScrollIntoView } from "@mantine/hooks";
+import LearnMore from "./components/LearnMore";
 import MainTitle from "./components/MainTitle";
 import Section from "./components/Section";
 import SimulationGame from "./components/SimulationGame";
 import ThemeToggle from "./components/ThemeToggle";
 
 function App() {
-  const {
-    scrollIntoView: scrollToPlay,
-    targetRef: playRef,
-  } = useScrollIntoView<HTMLDivElement>({offset: 72,})
+  const { scrollIntoView: scrollToPlay, targetRef: playRef } =
+    useScrollIntoView<HTMLDivElement>({ offset: 72 });
+
+  const { scrollIntoView: scrollToLearnMore, targetRef: learnMoreRef } =
+    useScrollIntoView<HTMLDivElement>({ offset: 72 });
+
   return (
     <MantineProvider>
       <AppShell header={{ height: 60 }} padding="sm">
@@ -28,11 +31,19 @@ function App() {
         </AppShellHeader>
         <AppShellMain>
           <Section>
-            <MainTitle scrollToPlay={scrollToPlay}/>
+            <MainTitle
+              scrollToPlay={scrollToPlay}
+              scrollToLearnMore={scrollToLearnMore}
+            />
           </Section>
+          <Box ref={playRef}>
+            <Section>
+              <SimulationGame />
+            </Section>
+          </Box>
           <Section>
-            <Box ref={playRef}>
-            <SimulationGame/>
+            <Box ref={learnMoreRef}>
+              <LearnMore />
             </Box>
           </Section>
         </AppShellMain>
