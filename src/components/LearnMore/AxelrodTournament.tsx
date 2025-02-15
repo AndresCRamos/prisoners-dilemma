@@ -62,6 +62,48 @@ const AxelrodTournament: React.FC = () => {
         the results showed a clear winner
       </Text>
       <GeneralResultsTable />
+      <Text>
+        The winner is a simple strategy: Tit 4 Tat, a strategy as simple as one
+        can get:
+      </Text>
+      <List listStyleType="initial">
+        <List.Item>Starts by cooperating</List.Item>
+        <List.Item>Copies the last movement of the opponent</List.Item>
+      </List>
+      <Text>
+        Thats it, no fancy analysis, no complicated math, just something could
+        call "eye for an eye" strategy, yet, it outperformed every one else
+      </Text>
+      <Title order={3} className="text-[--mantine-primary-color-filled]">
+        Why did it work?
+      </Title>
+      <Text>
+        After some analysis, Axelrod identified some key traits that the top
+        players display, specially tit 4 tat, had in common:
+      </Text>
+      <List listStyleType="initial">
+        <List.Item>
+          Nice: It wasn't the first to betray. By cooperating initially, it set
+          a precedent for mutual trust.
+        </List.Item>
+        <List.Item>
+          Retaliatory: If the opponent betrayed, it responded in kind. Being
+          nice didn't mean being a pushover.
+        </List.Item>
+        <List.Item>
+          Forgiving: If the opponent gets the message and cooperates again, it
+          doesn't hold a grudge, it resets and gives a fresh start
+        </List.Item>
+        <List.Item>
+          Be clear: Its simple and predictable. Others quickly understand how it
+          works, making cooperation easy by reducing uncertainty
+        </List.Item>
+      </List>
+      <Text>
+        This combination of cooperation, self-defense and clarity, made Tit 4
+        Tat, and other strategies with this traits, and ideal candidate for long
+        term success
+      </Text>
     </Stack>
   );
 };
