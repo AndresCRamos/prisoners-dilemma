@@ -104,6 +104,32 @@ const AxelrodTournament: React.FC = () => {
         Tat, and other strategies with this traits, and ideal candidate for long
         term success
       </Text>
+      <Title order={2} className="text-[--mantine-primary-color-filled]">
+        The power of being nice
+      </Title>
+      <Text>
+        Axelrod’s tournament wasn’t just a quirky game theory experiment—it
+        showed something profound: being nice actually works. In a world that
+        often rewards cutthroat tactics, Tit-for-Tat proved that cooperation,
+        fairness, and clarity can lead to long-term success.
+      </Text>
+      <Text>
+        At first glance, betrayal seems like the safest bet. If you take
+        advantage of others before they do it to you, you avoid being the fool.
+        But the tournament revealed the opposite: those who played fair,
+        defended themselves when necessary, and forgave when possible thrived
+        the most.
+      </Text>
+      <Text>
+        This isn’t just about games. It reflects real-world dynamics in
+        business, relationships, and even international politics. Short-term
+        gains from deception or aggression might seem tempting, but over time,
+        trust and cooperation build stronger, more resilient systems.
+      </Text>
+      <Text>
+        In the end, Axelrod’s tournament teaches us that success isn’t about
+        being the most ruthless—it’s about being strategically kind.
+      </Text>
     </Stack>
   );
 };
