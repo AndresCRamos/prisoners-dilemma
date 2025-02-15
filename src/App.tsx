@@ -36,14 +36,14 @@ function App() {
               scrollToLearnMore={scrollToLearnMore}
             />
           </Section>
+          <Box ref={playRef}>
+            <Section>
+              <SimulationGame />
+            </Section>
+          </Box>
           <Section>
             <Box ref={learnMoreRef}>
               <LearnMore />
-            </Box>
-          </Section>
-          <Section>
-            <Box ref={playRef}>
-              <SimulationGame />
             </Box>
           </Section>
         </AppShellMain>
