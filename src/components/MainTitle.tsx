@@ -26,7 +26,7 @@ function MainTitle({ scrollToPlay, scrollToLearnMore }: MainTitleProps) {
           <Center>
             <Title
               order={1}
-              className="bg-gradient-to-t from-[--mantine-primary-color-filled] inline-block text-transparent bg-clip-text"
+              className="bg-gradient-to-t from-[--mantine-primary-color-filled] inline-block text-transparent bg-clip-text text-center"
             >
               The Prisoners Dilemma
             </Title>
