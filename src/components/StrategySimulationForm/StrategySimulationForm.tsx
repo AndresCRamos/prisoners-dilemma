@@ -1,10 +1,10 @@
+import { Button, Center, Container, Fieldset } from "@mantine/core";
 import React, { useMemo } from "react";
+import { useSimulation } from "../../hooks/useSimulation";
 import { StrategyName } from "../../strategies";
-import StrategySelector from "../StrategySelector";
 import { simulatePlay } from "../../utils/simulation";
 import RoundsInput from "../RoundsInput";
-import { useSimulation } from "../../hooks/useSimulation";
-import { Button, Center, Container, Fieldset } from "@mantine/core";
+import StrategySelector from "../StrategySelector";
 
 const StrategySimulationForm = () => {
   const {
@@ -35,11 +35,11 @@ const StrategySimulationForm = () => {
 
   const bothStrategiesSelected = useMemo(
     () => strategy1Name !== "" && strategy2Name !== "",
-    [strategy1Name, strategy2Name]
+    [strategy1Name, strategy2Name],
   );
 
   return (
-    <Container>
+    <Container className="w-full">
       <Fieldset>
         <form onSubmit={handleSubmit}>
           <Fieldset
