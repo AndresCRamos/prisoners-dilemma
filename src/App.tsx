@@ -10,6 +10,7 @@ import LearnMore from "./components/LearnMore";
 import MainTitle from "./components/MainTitle";
 import Section from "./components/Section";
 import SimulationGame from "./components/SimulationGame";
+import Sources from "./components/Sources";
 import ThemeToggle from "./components/ThemeToggle";
 
 function App() {
@@ -45,6 +46,9 @@ function App() {
             <Box ref={learnMoreRef}>
               <LearnMore />
             </Box>
+          </Section>
+          <Section>
+            <Sources />
           </Section>
         </AppShellMain>
       </AppShell>
