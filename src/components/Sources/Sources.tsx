@@ -5,12 +5,14 @@ const Sources: React.FC = () => {
   return (
     <Container>
       <Stack gap={"lg"} className="pt-64 pb-32">
-        <Title className="text-[--mantine-primary-color-filled]">Sources</Title>
+        <Title order={2} className="text-[--mantine-primary-color-filled]">
+          Sources
+        </Title>
         <Text>This project draws inspiration from some key resources:</Text>
         <Card shadow="md" padding="xl" radius={"md"} withBorder>
           <Stack>
             <Title
-              order={2}
+              order={3}
               className="text-[--mantine-primary-color-filled] text-center"
             >
               What Game Theory Reveals About Life, The Universe, and Everything
@@ -26,7 +28,7 @@ const Sources: React.FC = () => {
           </Stack>
         </Card>
         <Card shadow="md" padding="xl" radius={"md"} withBorder>
-          <Title order={2} className="text-[--mantine-primary-color-filled]">
+          <Title order={3} className="text-[--mantine-primary-color-filled]">
             Effective choice in the Prisoners Dilemma
           </Title>
           <Text>[Axelrod - 1980]</Text>
@@ -38,7 +40,7 @@ const Sources: React.FC = () => {
           </Text>
         </Card>
         <Card shadow="md" padding="xl" radius={"md"} withBorder>
-          <Title order={2} className="text-[--mantine-primary-color-filled]">
+          <Title order={3} className="text-[--mantine-primary-color-filled]">
             Axelrod library
           </Title>
           <Text>[Python pip: Axelrod]</Text>
