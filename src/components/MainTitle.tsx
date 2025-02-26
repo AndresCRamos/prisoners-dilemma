@@ -1,5 +1,5 @@
-import { Button, Center, Grid, Text, Title } from "@mantine/core";
-import { useScrollIntoView } from "@mantine/hooks";
+import { Button, Center, Grid, Stack, Text, Title } from "@mantine/core";
+import type { useScrollIntoView } from "@mantine/hooks";
 
 type ScrollIntoViewType = ReturnType<
   typeof useScrollIntoView
@@ -8,15 +8,24 @@ type ScrollIntoViewType = ReturnType<
 interface MainTitleProps {
   scrollToPlay: ScrollIntoViewType;
   scrollToLearnMore: ScrollIntoViewType;
+  scrollToSources: ScrollIntoViewType;
 }
 
-function MainTitle({ scrollToPlay, scrollToLearnMore }: MainTitleProps) {
+function MainTitle({
+  scrollToPlay,
+  scrollToLearnMore,
+  scrollToSources,
+}: MainTitleProps) {
   function handleScrollToPlay() {
     scrollToPlay({ alignment: "start" });
   }
 
   function handleScrollToLearnMore() {
     scrollToLearnMore({ alignment: "start" });
+  }
+
+  function handleScrollToSources() {
+    scrollToSources({ alignment: "start" });
   }
 
   return (
@@ -53,14 +62,30 @@ function MainTitle({ scrollToPlay, scrollToLearnMore }: MainTitleProps) {
           </Center>
         </Grid.Col>
         <Grid.Col span={{ base: 12, sm: 6 }}>
-          <Text className="text-center">
-            Curious about this paradoxical game?
-          </Text>
-          <Center>
-            <Button variant="light" onClick={handleScrollToLearnMore}>
-              Learn more
-            </Button>
-          </Center>
+          <Stack gap={"lg"}>
+            <Stack gap={"xs"}>
+              <Text className="text-center">
+                Curious about this paradoxical game?
+              </Text>
+              <Center>
+                <Button variant="light" onClick={handleScrollToLearnMore}>
+                  Learn more
+                </Button>
+              </Center>
+            </Stack>
+          </Stack>
+        </Grid.Col>
+        <Grid.Col>
+          <Stack gap={"xs"}>
+            <Text className="text-center">
+              Nice argument, what are you sources?
+            </Text>
+            <Center>
+              <Button variant="light" onClick={handleScrollToSources}>
+                Check them here
+              </Button>
+            </Center>
+          </Stack>
         </Grid.Col>
       </Grid>
     </>

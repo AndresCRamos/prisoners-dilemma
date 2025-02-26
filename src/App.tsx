@@ -20,6 +20,9 @@ function App() {
   const { scrollIntoView: scrollToLearnMore, targetRef: learnMoreRef } =
     useScrollIntoView<HTMLDivElement>({ offset: 72 });
 
+  const { scrollIntoView: scrollToSources, targetRef: sourcesRef } =
+    useScrollIntoView<HTMLDivElement>();
+
   return (
     <MantineProvider>
       <AppShell header={{ height: 60 }} padding="sm">
@@ -35,6 +38,7 @@ function App() {
             <MainTitle
               scrollToPlay={scrollToPlay}
               scrollToLearnMore={scrollToLearnMore}
+              scrollToSources={scrollToSources}
             />
           </Section>
           <Box ref={playRef}>
@@ -48,7 +52,9 @@ function App() {
             </Box>
           </Section>
           <Section>
-            <Sources />
+            <Box ref={sourcesRef}>
+              <Sources />
+            </Box>
           </Section>
         </AppShellMain>
       </AppShell>
