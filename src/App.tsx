@@ -6,6 +6,7 @@ import {
   Box,
   Button,
   MantineProvider,
+  Stack,
   Transition,
 } from "@mantine/core";
 import { useInViewport, useMergedRef, useScrollIntoView } from "@mantine/hooks";
@@ -17,8 +18,12 @@ import Sources from "./components/Sources";
 import ThemeToggle from "./components/ThemeToggle";
 
 function App() {
-  const { scrollIntoView: scrollToPlay, targetRef: playRef } =
+  const { scrollIntoView: scrollToPlay, targetRef: playRefScroll } =
     useScrollIntoView<HTMLDivElement>({ offset: 72 });
+
+  const { ref: playRefViewport, inViewport: inViewportPlay } = useInViewport();
+
+  const playRef = useMergedRef(playRefScroll, playRefViewport);
 
   const { scrollIntoView: scrollToLearnMore, targetRef: learnMoreRef } =
     useScrollIntoView<HTMLDivElement>({ offset: 72 });
@@ -54,11 +59,11 @@ function App() {
               />
             </Box>
           </Section>
-          <Box ref={playRef}>
-            <Section>
+          <Section>
+            <Box ref={playRef}>
               <SimulationGame />
-            </Section>
-          </Box>
+            </Box>
+          </Section>
           <Section>
             <Box ref={learnMoreRef}>
               <LearnMore />
@@ -70,16 +75,34 @@ function App() {
             </Box>
           </Section>
           <Affix position={{ bottom: 20, right: 20 }}>
-            <Transition transition={"fade-left"} mounted={!inViewportMainTitle}>
-              {(styles) => (
-                <Button
-                  style={styles}
-                  onClick={() => scrollToMainTitle({ alignment: "center" })}
-                >
-                  Go to top
-                </Button>
-              )}
-            </Transition>
+            <Stack gap={"xs"}>
+              <Transition
+                transition={"fade-left"}
+                mounted={!inViewportMainTitle}
+              >
+                {(styles) => (
+                  <Button
+                    style={styles}
+                    onClick={() => scrollToMainTitle({ alignment: "center" })}
+                  >
+                    Go to top
+                  </Button>
+                )}
+              </Transition>
+              <Transition
+                transition={"fade-left"}
+                mounted={!inViewportMainTitle && !inViewportPlay}
+              >
+                {(styles) => (
+                  <Button
+                    style={styles}
+                    onClick={() => scrollToPlay({ alignment: "center" })}
+                  >
+                    Lets play
+                  </Button>
+                )}
+              </Transition>
+            </Stack>
           </Affix>
         </AppShellMain>
       </AppShell>
