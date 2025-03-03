@@ -1,4 +1,12 @@
-import { Card, Container, Stack, Text, Title } from "@mantine/core";
+import {
+  Button,
+  Card,
+  Center,
+  Container,
+  Stack,
+  Text,
+  Title,
+} from "@mantine/core";
 import React from "react";
 
 const Sources: React.FC = () => {
@@ -26,6 +34,15 @@ const Sources: React.FC = () => {
             goes in more depth about the prisoners dilemma, Axelrod tournament,
             some variations on it, and some insights about Axelrod's discoveries
           </Text>
+          <Center>
+            <Button
+              component="a"
+              href="https://youtu.be/mScpHTIi-kM?si=RgMVZ21-n4QEX5rd"
+              target="_blank"
+            >
+              See it for yourself
+            </Button>
+          </Center>
         </Card>
         <Card shadow="md" padding="xl" radius={"md"} withBorder>
           <Title
@@ -59,6 +76,14 @@ const Sources: React.FC = () => {
             from a refactor of this great Python lib, as well as some ideas and
             insights
           </Text>
+          <Center>
+            <Button
+              component="a"
+              href="https://axelrod.readthedocs.io/en/stable/index.html"
+            >
+              Read the docs
+            </Button>
+          </Center>
         </Card>
       </Stack>
     </Container>
