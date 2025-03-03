@@ -80,6 +80,7 @@ const Sources: React.FC = () => {
             <Button
               component="a"
               href="https://axelrod.readthedocs.io/en/stable/index.html"
+              target="_blank"
             >
               Read the docs
             </Button>
