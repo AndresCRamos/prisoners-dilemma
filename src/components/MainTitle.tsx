@@ -17,7 +17,7 @@ function MainTitle({
   scrollToSources,
 }: MainTitleProps) {
   function handleScrollToPlay() {
-    scrollToPlay({ alignment: "start" });
+    scrollToPlay({ alignment: "center" });
   }
 
   function handleScrollToLearnMore() {
