@@ -1,11 +1,14 @@
 import {
+  Affix,
   AppShell,
   AppShellHeader,
   AppShellMain,
   Box,
+  Button,
   MantineProvider,
+  Transition,
 } from "@mantine/core";
-import { useScrollIntoView } from "@mantine/hooks";
+import { useInViewport, useMergedRef, useScrollIntoView } from "@mantine/hooks";
 import LearnMore from "./components/LearnMore";
 import MainTitle from "./components/MainTitle";
 import Section from "./components/Section";
@@ -23,6 +26,14 @@ function App() {
   const { scrollIntoView: scrollToSources, targetRef: sourcesRef } =
     useScrollIntoView<HTMLDivElement>();
 
+  const { scrollIntoView: scrollToMainTitle, targetRef: mainTitleRefScroll } =
+    useScrollIntoView<HTMLDivElement>({ offset: 72 });
+
+  const { ref: mainTitleRefViewport, inViewport: inViewportMainTitle } =
+    useInViewport();
+
+  const mainTitleRef = useMergedRef(mainTitleRefScroll, mainTitleRefViewport);
+
   return (
     <MantineProvider>
       <AppShell header={{ height: 60 }} padding="sm">
@@ -35,11 +46,13 @@ function App() {
         </AppShellHeader>
         <AppShellMain>
           <Section>
-            <MainTitle
-              scrollToPlay={scrollToPlay}
-              scrollToLearnMore={scrollToLearnMore}
-              scrollToSources={scrollToSources}
-            />
+            <Box ref={mainTitleRef}>
+              <MainTitle
+                scrollToPlay={scrollToPlay}
+                scrollToLearnMore={scrollToLearnMore}
+                scrollToSources={scrollToSources}
+              />
+            </Box>
           </Section>
           <Box ref={playRef}>
             <Section>
@@ -56,6 +69,18 @@ function App() {
               <Sources />
             </Box>
           </Section>
+          <Affix position={{ bottom: 20, right: 20 }}>
+            <Transition transition={"fade-left"} mounted={!inViewportMainTitle}>
+              {(styles) => (
+                <Button
+                  style={styles}
+                  onClick={() => scrollToMainTitle({ alignment: "center" })}
+                >
+                  Go to top
+                </Button>
+              )}
+            </Transition>
+          </Affix>
         </AppShellMain>
       </AppShell>
     </MantineProvider>
