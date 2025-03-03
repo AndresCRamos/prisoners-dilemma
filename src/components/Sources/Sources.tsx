@@ -3,6 +3,7 @@ import {
   Card,
   Center,
   Container,
+  Group,
   Stack,
   Text,
   Title,
@@ -85,6 +86,39 @@ const Sources: React.FC = () => {
               Read the docs
             </Button>
           </Center>
+        </Card>
+        <Card shadow="md" padding="xl" radius={"md"} withBorder>
+          <Title
+            order={3}
+            className="text-[--mantine-primary-color-filled] text-center"
+          >
+            stdlib stats
+          </Title>
+          <Text className="text-center font-semibold pb-4" c="dimmed">
+            [Part of the stdlib js library]
+          </Text>
+          <Text>
+            stdlib aims to be a standard library for JavaScript, it includes a
+            stats module, that provides the chi squared test used by some
+            strategies
+          </Text>
+          <Group align="center" justify="center">
+            <Button
+              component="a"
+              href="https://stdlib.io/docs/ts/latest/index.html"
+              target="_blank"
+            >
+              Check the library here
+            </Button>
+            <Button
+              component="a"
+              href="https://stdlib.io/docs/ts/latest/modules/_stats_chi2gof_docs_types_index_d_.html"
+              target="_blank"
+              variant="light"
+            >
+              Check the chi squared test module here
+            </Button>
+          </Group>
         </Card>
       </Stack>
     </Container>
