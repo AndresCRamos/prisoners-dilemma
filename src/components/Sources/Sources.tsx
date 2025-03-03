@@ -1,7 +1,6 @@
 import {
   Button,
   Card,
-  Center,
   Container,
   Group,
   Stack,
@@ -35,7 +34,7 @@ const Sources: React.FC = () => {
             goes in more depth about the prisoners dilemma, Axelrod tournament,
             some variations on it, and some insights about Axelrod's discoveries
           </Text>
-          <Center>
+          <Group grow>
             <Button
               component="a"
               href="https://youtu.be/mScpHTIi-kM?si=RgMVZ21-n4QEX5rd"
@@ -43,7 +42,7 @@ const Sources: React.FC = () => {
             >
               See it for yourself
             </Button>
-          </Center>
+          </Group>
         </Card>
         <Card shadow="md" padding="xl" radius={"md"} withBorder>
           <Title
@@ -77,7 +76,7 @@ const Sources: React.FC = () => {
             from a refactor of this great Python lib, as well as some ideas and
             insights
           </Text>
-          <Center>
+          <Group grow>
             <Button
               component="a"
               href="https://axelrod.readthedocs.io/en/stable/index.html"
@@ -85,7 +84,7 @@ const Sources: React.FC = () => {
             >
               Read the docs
             </Button>
-          </Center>
+          </Group>
         </Card>
         <Card shadow="md" padding="xl" radius={"md"} withBorder>
           <Title
@@ -102,7 +101,7 @@ const Sources: React.FC = () => {
             stats module, that provides the chi squared test used by some
             strategies
           </Text>
-          <Group align="center" justify="center">
+          <Group grow preventGrowOverflow={false}>
             <Button
               component="a"
               href="https://stdlib.io/docs/ts/latest/index.html"
@@ -116,7 +115,7 @@ const Sources: React.FC = () => {
               target="_blank"
               variant="light"
             >
-              Check the chi squared test module here
+              Check the module here
             </Button>
           </Group>
         </Card>
