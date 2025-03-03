@@ -10,6 +10,7 @@ import LearnMore from "./components/LearnMore";
 import MainTitle from "./components/MainTitle";
 import Section from "./components/Section";
 import SimulationGame from "./components/SimulationGame";
+import Sources from "./components/Sources";
 import ThemeToggle from "./components/ThemeToggle";
 
 function App() {
@@ -18,6 +19,9 @@ function App() {
 
   const { scrollIntoView: scrollToLearnMore, targetRef: learnMoreRef } =
     useScrollIntoView<HTMLDivElement>({ offset: 72 });
+
+  const { scrollIntoView: scrollToSources, targetRef: sourcesRef } =
+    useScrollIntoView<HTMLDivElement>();
 
   return (
     <MantineProvider>
@@ -34,6 +38,7 @@ function App() {
             <MainTitle
               scrollToPlay={scrollToPlay}
               scrollToLearnMore={scrollToLearnMore}
+              scrollToSources={scrollToSources}
             />
           </Section>
           <Box ref={playRef}>
@@ -44,6 +49,11 @@ function App() {
           <Section>
             <Box ref={learnMoreRef}>
               <LearnMore />
+            </Box>
+          </Section>
+          <Section>
+            <Box ref={sourcesRef}>
+              <Sources />
             </Box>
           </Section>
         </AppShellMain>
