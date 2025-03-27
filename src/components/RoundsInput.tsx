@@ -1,38 +1,24 @@
-import React from "react";
 import { useSimulation } from "../hooks/useSimulation";
+import { NumberInput } from "@mantine/core";
 
 const RoundsInput = () => {
-  const { setRounds, error, setError } = useSimulation();
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const value = event.target.value;
-    if (value === "") {
-      setRounds(20); // Default to 20 if input is invalid or empty
-      setError("");
-    } else {
-      const numberValue = parseInt(value, 10);
-      if (isNaN(numberValue)) {
-        setError("Please enter a valid number");
-      } else if (numberValue <= 0) {
-        setError("Number has to be positive");
-      } else {
-        setRounds(numberValue);
-        setError("");
-      }
-    }
+  const { rounds, setRounds } = useSimulation();
+  const handleChange = (number_string: string | number) => {
+    const value = number_string as number;
+    setRounds(value);
   };
 
   return (
     <div>
-      <label>
-        Number of Rounds:
-        <input
-          defaultValue={20}
-          type="number"
-          onChange={handleChange}
-          placeholder="Enter number of rounds"
-        />
-      </label>
-      {error && <p className="text-red-500">{error}</p>}
+      <NumberInput
+        allowNegative={false}
+        min={20}
+        value={rounds}
+        defaultValue={20}
+        allowDecimal={false}
+        label="Rounds"
+        onChange={handleChange}
+      />
     </div>
   );
 };

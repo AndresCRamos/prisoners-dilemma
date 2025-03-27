@@ -52,7 +52,45 @@ export class StrategyChi2Test extends StrategyBase {
   }
 }
 
-export type Strategy = StrategyBase | StrategyWithRounds | StrategyChi2Test;
+export class StrategyChi2TestWithRounds extends StrategyChi2Test {
+  protected rounds: number;
+
+  constructor(rounds: number) {
+    super();
+    this.rounds = rounds;
+  }
+}
+
+export class StrategyWithHistory extends StrategyWithRounds {
+  protected ownMoveHistory: Move[] = [];
+  protected opponentMoveHistory: Move[] = [];
+  protected currentRound: number = 0;
+
+  protected setLastOwnMove(move: Move): Move {
+    this.ownMoveHistory.push(move);
+    return move;
+  }
+
+  protected setLastOpponentMove(move: Move): void {
+    this.opponentMoveHistory.push(move);
+  }
+
+  getNextMove(): Move {
+    throw new Error("getNextMove must be implemented");
+  }
+
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  setOpponentMove(_move: Move): void {
+    throw new Error("setOpponentMove must be implemented");
+  }
+}
+
+export type Strategy =
+  | StrategyBase
+  | StrategyWithRounds
+  | StrategyChi2Test
+  | StrategyChi2TestWithRounds
+  | StrategyWithHistory;
 
 export type StrategyBaseConstructor = new () => Strategy;
 export type StrategyWithRoundsConstructor = new (rounds: number) => Strategy;

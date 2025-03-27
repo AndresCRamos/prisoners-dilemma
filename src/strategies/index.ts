@@ -16,6 +16,12 @@ import Grofman from "./Grofman";
 import Feld from "./Feld";
 import Anonymous from "./Anonymous";
 import SteinAndRapaport from "./SteinAndRapaport";
+import Graaskamp from "./Graaskamp";
+import Shubik from "./Shubik";
+import Tullock from "./Tullock";
+import Downing from "./Downing";
+import Nydegger from "./Nydegger";
+import TidemanAndChieruzzi from "./TidemanAndChieruzzi";
 
 export type StrategyClassMap = {
   [key: string]: StrategyConstructor;
@@ -25,14 +31,20 @@ const strategyClassesConst = {
   "Always Cooperate": AlwaysCooperate,
   "Always Defect": AlwaysDefect,
   Davis,
+  Downing,
   Feld,
   Friedman,
+  Graaskamp,
   Grofman,
   Joss,
   "Name Witheld": Anonymous,
+  Nydegger,
   Random: RandomStrategy,
+  Shubik,
   "Stein and Rapaport": SteinAndRapaport,
+  "Tideman and Chieruzzi": TidemanAndChieruzzi,
   "Tit for Tat": TitForTat,
+  Tullock,
 } as const;
 
 export type StrategyName = keyof typeof strategyClassesConst;
